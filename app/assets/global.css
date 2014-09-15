@@ -33,7 +33,7 @@ header h1 {
 }
 
 footer{
-	background: url('#') center;
+	background: url('http://lorempixel.com/400/200/') center;
 	height: 300px;
 }
 
