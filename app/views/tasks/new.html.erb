@@ -1,3 +1,12 @@
 <h1>Add a new task</h1>
 
-<p>Form to go here later</p>
+<%= form_for @task do |f| %>
+  <p>Task name: <%= f.text_field :name %></p>
+  
+  <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline%></p>
+  
+  <p>Complete? <%= f.check_box :complete%></p>
+  
+  <%= f.submit %>
+  
+<% end %>
