@@ -3,6 +3,6 @@
 <p>Task name: <%= @task.name %></p>
 <p>Deadline: <%= @task.deadline %></p>
 <p><%= @task.completed.capitalize %></p>
-<p><%= link_to("Edit task", edit_task_path) %></p>
+<p><%= link_to("Edit task", edit_task_path(@task.id)) %></p>
 
 <%= link_to("All tasks", tasks_path)%>

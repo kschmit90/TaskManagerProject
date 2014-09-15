@@ -7,13 +7,12 @@
     <td>Task Name</td>
     <td>Deadline</td>
     <td>Complete?</td>
-  <% @tasks.each do |task| %>
+  <% @tasks.each do |t| %>
   <tr>
-    <td><%= link_to(task.name, task_path(task.id)) %></td>
-    <td><%= task.deadline %></td>
-    <td><%= task.completed.capitalize %></td>
-    <td><%= link_to("Edit", edit_task_path(task.id))%></td>
-    <td><%= link_to('Delete', task_path(task.id), :method => :delete, data: {confirm: 'Are you sure?' }) %></td>
+    <td><%= link_to(t.name, task_path(t.id)) %></td>
+    <td><%= t.deadline %></td>
+    <td><%= t.completed.capitalize %></td>
+    <td><%= link_to("Edit", edit_task_path(t.id))%></td>
   </tr>
   <% end %>
 </table>
