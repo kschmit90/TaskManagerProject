@@ -54,7 +54,7 @@ module TaskManagerProject
     config.active_record.whitelist_attributes = true
         
     # Configure for Heroku
-    config.assets.initialize_on_precompile = true
+    config.assets.initialize_on_precompile = false
 
     # Enable the asset pipeline
     config.assets.enabled = true
