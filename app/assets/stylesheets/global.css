@@ -5,59 +5,6 @@ html {
   box-sizing: inherit;
 }
 
-#container{
-	background: #1A7DED;
-	margin: 0 auto;
-}
-
-body{
-	margin: 0;
-}
-
-header {
-  position: relative;
-  min-height: 20px;
-  background: #ECECEC;
-  top: 50px;
-  width: 100%;
-  text-align: center;
-}
-
-header h1 {
-  position: absolute;
-  color: white;
-  top: -40px;
-  display: inline-block;
-  padding: 0px;
-  margin: 0px;
-}
-
-footer{
-	background: url('http://lorempixel.com/400/200/') center;
-	height: 300px;
-}
-
-footer h1{
-	margin: 0;
-}
-
-
-/*----------
-
-#main {
-  position: relative;
-  background: green;
-  top: 100px;
-
-}*/
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
 .error{
 	color: red;
 }
@@ -99,7 +46,7 @@ a {
 }
 
 #container {
-	background: #5E8C6A;
+	background: #1E138C;
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
@@ -140,98 +87,3 @@ header ul li {
 header form {
 	position: relative;
 	bottom: 2px;
-}
-
-#recipe_search {
-	width: 800px;
-	margin-left: 61px;
-	position: relative;
-	text-align: center;
-	bottom: -8px;
-}
-
-#recipe_search p {
-	font-size: 27px;
-}
-
-#recipe_search input[type=text] {
-	position: relative;
-	bottom: 3px;
-}
-
-#recipe_search input[type=submit] {
-	padding: 5px 15px;
-	background: url("images/pizza.png");
-	border: 0 none;
-	cursor: pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	background-repeat: no-repeat;
-	background-position-x: -2px;
-	background-position-y: -4px;
-	background-size: 37px;
-}
-
-#recipes_by_user {
-	width: 800px;
-	text-align: center;
-	margin-left: 61px;
-	position: relative;
-	bottom: 3px;
-
-}
-
-#recipes_by_user p {
-	font-size: 27px;
-}
-
-#recipes_by_user input[type=submit] {
-	padding: 5px 15px;
-	background: url("images/user_select.png");
-	border: 0 none;
-	cursor: pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	background-repeat: no-repeat;
-	background-position-x: 0px;
-	background-position-y: 1px;
-	background-size: 18px;
-}
-
-#recipes_by_category {
-	width: 800px;
-	text-align: center;
-	margin-left: 61px;
-	position: relative;
-	top: 4px;
-}
-
-#recipes_by_category p {
-	font-size: 27px;
-}
-
-#recipes_by_category input[type=submit] {
-	padding: 5px 15px;
-	background: url("images/chef.png");
-	border: 0 none;
-	cursor: pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	background-repeat: no-repeat;
-	background-position-x: 0px;
-	background-position-y: -3px;
-	background-size: 40px;
-}
-
-#content {
-	clear: both;
-	margin-left: 55px;
-}
-
-#content li p {
-	width: 500px;
-}
-
-#admin li{
-	margin: 10px;
-}
