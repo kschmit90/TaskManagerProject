@@ -1,1 +1,17 @@
 <h1>Index page for tasks</h1>
+
+<table>
+  <tr>
+    <td>Task Name</td>
+    <td>Deadline</td>
+    <td>Complete?</td>
+  <% @tasks.each do |task| %>
+  <tr>
+    <td><%= task.name %></td>
+    <td><%= task.deadline %></td>
+    <td><%= task.complete %></td>
+    <td><%= link_to("Edit", edit_task_path(task.id))%></td>
+    <td><%= link_to('Delete', task_path(task.id), :method => :delete, data: {confirm: 'Are you sure?' }) %></td>
+  </tr>
+  <% end %>
+</table>
