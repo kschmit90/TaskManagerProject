@@ -3,6 +3,8 @@ class Task < ActiveRecord::Base
   
   scope :is_complete, where(:complete => true)
   
+  validates :name, :presence => true
+  
   def completed
     if complete == true
       "complete"
