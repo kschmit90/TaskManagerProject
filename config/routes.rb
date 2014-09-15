@@ -1,3 +1,3 @@
 TaskManagerProject::Application.routes.draw do
-  resource :Users
+  resources :Users
 end
