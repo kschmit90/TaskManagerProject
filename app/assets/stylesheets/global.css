@@ -6,7 +6,7 @@ html {
 }
 
 #container{
-	background: #1A7DED;
+	background-color: #1A7DED;
 	margin: 0 auto;
 }
 
@@ -23,7 +23,7 @@ header {
   text-align: center;
 }
 
-header h1 {
+h1 {
   position: absolute;
   color: white;
   top: -40px;
