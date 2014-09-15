@@ -11,7 +11,9 @@ class UsersController < ApplicationController
       else
         raise "User could not be saved."
       end
+    end
     
-      # Process the form submission to - hopefully - create a new user.
+    def show
+      @user = User.find[params[:id]]
     end
 end
