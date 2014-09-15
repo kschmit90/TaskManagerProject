@@ -1,1 +1,14 @@
 <h1>Edit page for <%= @task.name %></h1>
+
+<%= form_for @task do |f| %>
+  <p>Task name: <%= f.text_field :name %></p>
+  
+  <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline%></p>
+  
+  <p>Complete? <%= f.check_box :complete%></p>
+  
+  <p><%= f.submit %></p>
+
+<% end %>
+
+<p>Would you like to delete "<%= @task.name %>" from your profile? This action can not be undone: <%= link_to 'Delete', task_path(@task.id), :method => :delete, data: {confirm: 'Are you sure?' }%></p>
