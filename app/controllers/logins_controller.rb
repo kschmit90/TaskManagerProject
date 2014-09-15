@@ -20,5 +20,5 @@ class LoginsController < ApplicationController
       redirect_to articles_path
     end
   
-  end
+    
 end
