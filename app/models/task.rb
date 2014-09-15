@@ -3,7 +3,7 @@ class Task < ActiveRecord::Base
   
   scope :is_complete, where(:complete => true)
   
-  validates :name, :presence => true
+  validate :deadline_is_date?
   
   def completed
     if complete == true
@@ -12,5 +12,13 @@ class Task < ActiveRecord::Base
       "not complete"
     end
   end
+  
+    private
+
+    def deadline_is_date?
+      if !deadline.is_a?(Date)
+        errors.add(:deadline, 'must be a valid date') 
+      end
+    end
   
 end
