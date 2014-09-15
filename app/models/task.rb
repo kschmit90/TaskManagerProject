@@ -12,13 +12,11 @@ class Task < ActiveRecord::Base
       "not complete"
     end
   end
-  
-    private
 
-    def deadline_is_date?
-      if !deadline.is_a?(Date)
-        errors.add(:deadline, 'must be a valid date') 
-      end
+  def deadline_is_date?
+    if !deadline.is_a?(Date)
+      errors.add(:deadline, 'must be a valid date') 
     end
+  end
   
 end
