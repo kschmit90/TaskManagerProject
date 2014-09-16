@@ -4,7 +4,7 @@
   <tr>
     <td>Task Name</td>
     <td>Deadline</td>
-    <td>Complete?</td>
+    <td>Status</td>
   <% @tasks.each do |t| %>
   <tr>
     <td><%= link_to(t.name, task_path(t.id)) %></td>
