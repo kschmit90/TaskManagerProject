@@ -1,6 +1,10 @@
 TaskManagerProject::Application.routes.draw do
   root :to => 'pages#home'
   
+  # email Routes
+  get "email" => 'emails#new', :as => "new_email"
+  post "email" => 'emails#create'
+  
   # Login/Logout Routes
   get "logout" => 'logins#destroy', :as => "logout"
   
