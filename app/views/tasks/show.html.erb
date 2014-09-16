@@ -1,6 +1,12 @@
 <h1>Show detail page for <%= @task.name %></h1>
 
 <p>Task name: <%= @task.name %></p>
+
+<% if @task.project == nil %>  
+  <p>Not assigned to a project</p>
+<% else %>
+  <p>Assigned to Project: <%= @task.project.name %></p>
+<% end %>
 <p>Deadline: <%= @task.deadline %></p>
 <p><%= @task.completed.capitalize %></p>
 <p><%= link_to("Edit task", edit_task_path(@task.id)) %></p>

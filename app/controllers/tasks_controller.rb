@@ -21,6 +21,7 @@ class TasksController < ApplicationController
   
   def edit
     @task = Task.find(params[:id])
+    @projects = Project.all
   end
   
   def update
@@ -34,7 +35,7 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @task = Task.find(params[:id]).delete
+    Task.find(params[:id]).delete
     redirect_to tasks_path, :notice => "Your task has been deleted."
   end
   

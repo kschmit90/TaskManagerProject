@@ -1,0 +1,12 @@
+<h1>Detail page for <%= @project.name %></h1>
+
+<p><%= @project.completed.capitalize %></p>
+<p><%= @project.deadline %></p>
+<p><%= simple_format(@project.description)%></p>
+<p>Tasks:</br>
+    <% @project.tasks.each do |t| %>
+      <p><%= link_to(t.name, task_path(t.id))%></p>
+    <% end %>
+
+<p><%= link_to("Edit project", edit_project_path(@project.id)) %></p>
+<p><%= link_to("All projects", projects_path)%></p>
