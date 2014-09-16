@@ -5,6 +5,8 @@ class Task < ActiveRecord::Base
   
   validate :deadline_is_date?
   
+  belongs_to :project
+  
   # Changes the boolean saved in the "complete" column to a more user-friendly string
   #
   # Returns a user-friendly string describing whether the task is stored as complete or not
