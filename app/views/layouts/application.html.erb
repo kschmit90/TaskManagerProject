@@ -24,7 +24,12 @@
 			<nav>
 				<ul>
 					<li><a href="/">Home</a></li>
-					<li><a href="/users/new">Create User</a></li>
+          <% if current_user %>
+            <%= link_to("Logout", logout_path) %>
+          <% else %>
+            <%= link_to("Login", login_path) %>
+          s<% end %>
+				  <!--<li><a href="/users/new">Create User</a></li>-->
 					<li><form action="/user_page" method="get" id="userform">
 	
 						<select name="user" form="userform">
