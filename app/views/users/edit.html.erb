@@ -1,6 +1,6 @@
 <h1>Edit</h1>
-
-<%= form_for @user, :method => :create do |u| %>
+<%= @user.id %>
+<%= form_for @user do |u| %>
 
   <p>
     <%= u.label :name %>
