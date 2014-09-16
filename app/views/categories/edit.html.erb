@@ -12,10 +12,7 @@
     <%= f.text_field :description %>
   </p>
   
-  <p>Assign task to Category:</p>
-  <p>Task: <%= f.collection_select(:task_id, @tasks, :id, :name )%></p>
-
-  
   <%= f.submit %>
 
 <% end %>
+
