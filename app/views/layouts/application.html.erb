@@ -27,22 +27,8 @@
 					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
 					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
           <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/login">Login</a></li>
-					<li><a href="/">Home</a></li>
-          <% if current_user %>
-            <%= link_to("Logout", logout_path) %>
-          <% else %>
-            <%= link_to("Login", login_path) %>
-          <% end %>
-				  <!--<li><a href="/users/new">Create User</a></li>-->
-					<li><form action="/user_page" method="get" id="userform">
-	
-						<select name="user" form="userform">
-		
-						</select>
-	
-						<input type="submit" value="">
-	
-					</form></li>
+
+				 
 				</ul>
 			</nav>
 			
