@@ -1,6 +1,8 @@
 class Task < ActiveRecord::Base
   attr_accessible :complete, :deadline, :name
   
+  has_and_belongs_to_many :users
+  
   scope :is_complete, where(:complete => true)
   
   validate :deadline_is_date?
