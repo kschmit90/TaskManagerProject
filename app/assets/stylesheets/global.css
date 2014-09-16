@@ -104,7 +104,9 @@ img {
 
 #footer {
   position: relative;
-  bottom: -113px;
+  float: right;
+  height: 80px;
+  width: 1000px;
 	margin-top: 500px;
 	text-align: center;
 	background-color:#05D6FF;;
