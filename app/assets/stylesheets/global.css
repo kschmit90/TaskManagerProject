@@ -3,7 +3,9 @@
 }
 
 body {
-	background: #8C2318;
+	background: url("http://strongarmbrand.com/SitePages/Backgrounds/bkgnotebook_paper.jpg");
+	background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 header input[type=text] {
@@ -49,7 +51,7 @@ a {
 header {
 	width: 1000px;
 	height: 90px;
-	background:#BFB35A;
+	background:#05D6FF;
 }
 
 #header_content {
@@ -80,4 +82,17 @@ header ul li {
 header form {
 	position: relative;
 	bottom: 2px;
+}
+
+#footer {
+	display: inline-block;
+	margin-top: 100px;
+	text-align: center;
+	background-color:#05D6FF;;
+	border-radius: 4px solid;
+	border-color: #e7e7e7;
+}
+
+#footer p {
+	margin-top: 5px;
 }
