@@ -7,7 +7,7 @@ class EmailsController < ApplicationController
   
   def create
     binding.pry
-    @email = Pony.mail(:to => params[:to], :from => 'rpjktest.email@gmail.com', :body => params[:message])
+    @email = Pony.mail(:to => params[:to], :from => 'rpjktest.email@gmail.com', :subject => "You have been assigned a task!" :body => '<%= link_to ("Click here to see your task.")')
      if @email
        redirect_to user_path
      else
