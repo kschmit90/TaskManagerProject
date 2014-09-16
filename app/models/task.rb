@@ -1,5 +1,5 @@
 class Task < ActiveRecord::Base
-  attr_accessible :complete, :deadline, :name
+  attr_accessible :complete, :deadline, :name, :project_id
   
   scope :is_complete, where(:complete => true)
   scope :is_not_complete, where(:complete => false)
