@@ -34,12 +34,7 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @task = Task.find(params[:id])
-<<<<<<< HEAD
-=======
-    
->>>>>>> 8d1f4bc2dec619c9de534891deb46b4c7d3e513e
-    @task.delete
+    @task = Task.find(params[:id]).delete
     redirect_to tasks_path, :notice => "Your task has been deleted."
   end
   
