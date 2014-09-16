@@ -1,11 +1,8 @@
 class ProjectsController < ApplicationController
+  skip_before_filter :authorize  
   
   def index
     @projects = Project.all
-  end
-  
-  def show
-    @project = Project.find(params[:id])
   end
   
   def new
@@ -26,7 +23,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
   
-  def create
+  def update
     @project = Project.find(params[:id])
     
     if @project.update_attributes(params[:project])
@@ -34,6 +31,10 @@ class ProjectsController < ApplicationController
     else
       render "edit"
     end
+  end
+  
+  def show
+    @project = Project.find(params[:id])
   end
   
   def destroy

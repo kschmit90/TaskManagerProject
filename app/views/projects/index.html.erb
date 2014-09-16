@@ -1,1 +1,18 @@
 <h1>All Projects</h1>
+
+<table>
+  <tr>
+    <td>Project Name</td>
+    <td>Deadline</td>
+    <td>Description</td>
+  <% @projects.each do |project| %>
+  <tr>
+    <td><%= link_to(project.name, project_path(project.id)) %></td>
+    <td><%= project.deadline %></td>
+    <td><%= link_to("Edit", edit_project_path(project.id))%></td>
+    <td><%= link_to("Delete", project_path(project.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + project.name + '?' })%>
+  </tr>
+  <% end %>
+</table>
+
+<p><%= link_to("New Project", new_project_path) %></p>
