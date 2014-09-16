@@ -25,6 +25,7 @@ class CategoriesController < ApplicationController
   
   def edit
     @category = Category.find(params[:id])
+    @tasks = Task.all
   end
   
   def update
