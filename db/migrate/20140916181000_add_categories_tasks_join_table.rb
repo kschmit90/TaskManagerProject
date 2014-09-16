@@ -1,6 +1,9 @@
 class AddCategoriesTasksJoinTable < ActiveRecord::Migration
   def up
-    create_join_table :categories, :tasks
+    create_table :categories_tasks do |t|
+      t.integer :category_id
+      t.integer :task_id
+    end
   end
 
   def down
