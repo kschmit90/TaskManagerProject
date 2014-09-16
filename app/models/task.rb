@@ -2,8 +2,10 @@ class Task < ActiveRecord::Base
   attr_accessible :complete, :deadline, :name
   
   scope :is_complete, where(:complete => true)
+  scope :is_not_complete, where(:complete => false)
   
   validate :deadline_is_date?
+  validate :name, presence: true
   
   belongs_to :project
   
