@@ -9,6 +9,9 @@
 <% end %>
 <p>Deadline: <%= @task.deadline %></p>
 <p><%= @task.completed.capitalize %></p>
+<% @task.categories.each do |cat| %>
+    <p><%= link_to(cat.name, category_path(cat.id)) %></p>
+   <% end %>
 <p><%= link_to("Edit task", edit_task_path(@task.id)) %></p>
 
 <%= link_to("All tasks", tasks_path)%>
