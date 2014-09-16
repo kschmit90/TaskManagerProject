@@ -11,5 +11,5 @@ TaskManagerProject::Application.routes.draw do
   get "login" => 'logins#new', :as => "login"
   post "login" => 'logins#create', :as => "create_login"
   
-  resources :users, :tasks, :projects
+  resources :users, :tasks, :categories, :projects
 end

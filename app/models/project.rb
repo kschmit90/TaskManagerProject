@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :deadline, :description, :name
+  attr_accessible :deadline, :description, :name, :complete
   
   scope :is_complete, where(:complete => true)
   scope :is_not_complete, where(:complete => false)

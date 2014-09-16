@@ -1,6 +1,6 @@
 class Task < ActiveRecord::Base
-  attr_accessible :complete, :deadline, :name
-  
+  attr_accessible :complete, :deadline, :name, :project_id
+  has_and_belongs_to_many :categories
   has_and_belongs_to_many :users
   
   scope :is_complete, where(:complete => true)
