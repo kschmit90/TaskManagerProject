@@ -1,6 +1,6 @@
 <h1>Index</h1>
 
 
-<%@users.each do |u|%>
-<%= u.email %>
+<% @users.each do |u|%>
+<%= link_to u.email, user_path(u.id) %>
 <%end%>
