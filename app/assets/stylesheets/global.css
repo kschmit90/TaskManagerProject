@@ -36,18 +36,17 @@ header input[type=submit] {
 }
 
 a {
-  font-family: Verdana;
+   font-family: 'Amatic SC', cursive;
    display: block;
    width: 100px;
    padding: 5px;
    text-align: center;
-   background: #1d6991;
    color: white;
    text-decoration: none;
 }
 
 #container {
-	background: #1E138C;
+	background: #2A79C7;
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
@@ -73,9 +72,17 @@ header {
 }
 
 header nav {
+  position: relative;
+  bottom: 15px;
 	float: right;
 	margin-right: -37px;
 	margin-top: 6px;
+}
+
+header nav a{
+  position: relative;
+  bottom: 49px;
+  left: 18px;
 }
 
 header ul li {
@@ -90,14 +97,35 @@ header form {
 	bottom: 2px;
 }
 
-#footer {
-	margin-top: 100px;
-	text-align: center;
-	background-color:#05D6FF;;
-	border-radius: 4px solid;
-	border-color: #e7e7e7;
+img {
+    width:50px;
+    height: auto;
 }
 
-#footer p {
+#footer {
+  position: relative;
+  bottom: -113px;
+	margin-top: 500px;
+	text-align: center;
+	background-color:#05D6FF;;
+	border-color: #e7e7e7;
+  bottom: 0;
+}
+
+#footer ul li {
+	display: inline-block;
+  list-style-type: none;
 	margin-top: 5px;
+  font-family: 'Amatic SC', cursive;  
+  color: white;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  color: white;
+}
+
+.field {
+  font-family: 'Amatic SC', cursive;
+  color: white;
 }
