@@ -7,7 +7,6 @@ class TasksController < ApplicationController
   
   def new
     @task = Task.new
-    
   end
   
   def create
@@ -36,6 +35,10 @@ class TasksController < ApplicationController
   
   def destroy
     @task = Task.find(params[:id])
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 8d1f4bc2dec619c9de534891deb46b4c7d3e513e
     @task.delete
     redirect_to tasks_path, :notice => "Your task has been deleted."
   end
@@ -43,5 +46,4 @@ class TasksController < ApplicationController
   def show
     @task = Task.find(params[:id])
   end
-  
 end
