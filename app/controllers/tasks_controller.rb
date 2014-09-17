@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.all
-    binding.pry
+    
     @tasks.sort! { |a,b| a.order <=> b.order }
   end
   
