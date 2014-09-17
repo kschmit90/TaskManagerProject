@@ -19,7 +19,9 @@
 <% else %>
 
 <!-- This is returning a user object and not the e-mail attribute for that user object. Not sure why. -->
-  <p>Assigned to: <%= @task.users.each { |user| user.email } %></p>
+  <p>Assigned to: <% @task.users.each do |u| %>
+           <%= u.name %></p>
+         <% end %>
   
 <% end %>  
 
