@@ -11,12 +11,10 @@ class ProjectsController < ApplicationController
   
   def create
     @project = Project.new(params[:project])
-    @project.create_slug
     
     
     if @project.save
       @project.create_slug(@project)
-      binding.pry
       redirect_to project_path(@project), :notice => "New project saved! Way to go."
     else
       render "new"
