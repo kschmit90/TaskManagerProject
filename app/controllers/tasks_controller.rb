@@ -70,6 +70,18 @@ class TasksController < ApplicationController
     end
   end
   
+  def add_comment
+    @user = current_user
+    @task = Task.find(params[:id])
+    @comment = Comment.new(comment_text: params[:comment][:comment_text], user_id: current_user.id, task_id: @task.id)
+    
+    if @comment.save
+      redirect_to task_path(@task.id), :notice => "New comment saved! Way to go."
+    else
+      render "show", :alert => "Your comment was not successfully saved."
+    end
+  end
+  
   def update
     @task = Task.find(params[:id])
     
@@ -87,5 +99,7 @@ class TasksController < ApplicationController
   
   def show
     @task = Task.find(params[:id])
+    @user = current_user
+    @comment = Comment.new
   end
 end
