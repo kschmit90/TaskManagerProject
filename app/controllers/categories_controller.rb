@@ -25,11 +25,13 @@ class CategoriesController < ApplicationController
   
   def edit
     @category = Category.find(params[:id])
+    
     @tasks = Task.all
   end
   
   def update
     @category = Category.find(params[:id])
+    
     if @category.update_attributes(params[:category])
       redirect_to category_path(@category.id)
     else
@@ -39,6 +41,7 @@ class CategoriesController < ApplicationController
   
   def destroy
     @category = Category.find(params[:id])
+    
     @category.delete
     redirect_to categories_path
   end
