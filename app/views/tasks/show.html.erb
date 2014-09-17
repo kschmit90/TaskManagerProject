@@ -42,7 +42,7 @@
 <% else %>
 
   <% @task.comments.each do |c| %>
-    <p><%= link_to(c.user.email, user_path(c.user.id))%> - <%= simple_format(c.comment_text)%></p>
+    <p><%= link_to(c.user.email, user_path(c.user.id))%>: <%= simple_format(c.comment_text)%></p>
     <% end %>
 <% end %>
    
