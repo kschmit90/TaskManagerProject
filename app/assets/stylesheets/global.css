@@ -50,7 +50,7 @@ a {
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
-	height: 800px;
+	height: auto;
 }
 
 header {
