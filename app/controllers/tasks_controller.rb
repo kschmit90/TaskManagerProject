@@ -5,6 +5,8 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.all
+    binding.pry
+    @tasks.sort! { |a,b| a.order <=> b.order }
   end
   
   def new
@@ -29,22 +31,7 @@ class TasksController < ApplicationController
     @categories = Category.all
     @users = User.all
   end
-  
-  def add_user
-    @task = Task.find(params[:id])
-    @task.users << User.find(params[:task][:users].to_i)
     
-    @user = User.find(params[:task][:users].to_i)
-    binding.pry
-    if Pony.mail(:to => @user.email, :from => 'rpjktest.email@gmail.com', :subject => 'hi ' + @user.name, :body => 'Hello there ' + @user.name + ' your task is ' + @task.name, :via => :smtp, :via_options => {:address => 'smtp.gmail.com',
-    :port => '587', :authentication => :plain, :user_name => 'rpjktest.email@gmail.com', :password => 'Testpassword'}) 
-      redirect_to task_path(@task.id)
-    else
-      render 'edit'
-    end
-  end
- 
-  
   def add_category
     @task = Task.find(params[:id])
     
@@ -66,7 +53,23 @@ class TasksController < ApplicationController
       render "show"
     else
       @task.users << @user
+      
+      Pony.mail(:to => @user.email, :from => 'rpjktest.email@gmail.com', :subject => 'hi ' + @user.name, :body => 'Hello there ' + @user.name + ' your task is ' + @task.name, :via => :smtp, :via_options => {:address => 'smtp.gmail.com',
+      :port => '587', :authentication => :plain, :user_name => 'rpjktest.email@gmail.com', :password => 'Testpassword'})
+      
       redirect_to task_path(@task.id), :notice => "The task has been assigned."
+    end
+  end
+  
+  def add_comment
+    @user = current_user
+    @task = Task.find(params[:id])
+    @comment = Comment.new(comment_text: params[:comment][:comment_text], user_id: current_user.id, task_id: @task.id)
+    
+    if @comment.save
+      redirect_to task_path(@task.id), :notice => "New comment saved! Way to go."
+    else
+      render "login", :alert => "You must be logged in to do leave a comment."
     end
   end
   
@@ -87,5 +90,7 @@ class TasksController < ApplicationController
   
   def show
     @task = Task.find(params[:id])
+    @user = current_user
+    @comment = Comment.new
   end
 end
