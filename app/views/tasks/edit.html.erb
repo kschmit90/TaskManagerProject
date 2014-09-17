@@ -8,6 +8,8 @@
   <p>Complete? <%= f.check_box :complete%></p>
   
   <p>Project: <%= f.collection_select(:project_id, @projects, :id, :name )%></p>
+  
+  <p>Order: <%= f.text_field(:order) %>
     
   <p><%= f.submit %></p>
 
