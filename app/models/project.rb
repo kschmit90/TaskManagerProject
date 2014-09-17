@@ -1,5 +1,5 @@
 class Project < ActiveRecord::Base
-  attr_accessible :deadline, :description, :name, :complete
+  attr_accessible :deadline, :description, :name, :complete, :slug
   
   scope :is_complete, where(:complete => true)
   scope :is_not_complete, where(:complete => false)
@@ -30,10 +30,20 @@ class Project < ActiveRecord::Base
   end
   
   def to_param
-    "#{id}-#{slug}"
+    # "#{id}-#{slug}"
+    slug
   end
   
-  def slug
-    name.downcase.gsub(" ", "-")
-  end  
+  # def slug
+#     name.downcase.gsub(" ", "-")
+#   end
+
+  def create_slug
+    Project.all.each do |project|
+      project.slug = project.name.downcase.gsub(" ", "-")
+      project.save
+    end
+  end
+    
+  
 end
