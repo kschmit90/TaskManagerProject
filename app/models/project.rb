@@ -28,4 +28,12 @@ class Project < ActiveRecord::Base
       errors.add(:deadline, 'must be a valid date') 
     end
   end
+  
+  def to_param
+    "#{id}-#{slug}"
+  end
+  
+  def slug
+    name.downcase.gsub(" ", "-")
+  end  
 end
