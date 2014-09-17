@@ -2,13 +2,39 @@
 
 <p>Task name: <%= @task.name %></p>
 
-<% if @task.project == nil %>  
+<% if @task.project == nil %>
+  
   <p>Not assigned to a project</p>
+  
 <% else %>
+
   <p>Assigned to Project: <%= @task.project.name %></p>
+  
 <% end %>
+
+<% if @task.users == [] %>
+
+  <p>Not assigned to a user</p>
+  
+<% else %>
+
+<!-- This is returning a user object and not the e-mail attribute for that user object. Not sure why. -->
+  <p>Assigned to: <%= @task.users.each { |user| user.email } %></p>
+  
+<% end %>  
+
 <p>Deadline: <%= @task.deadline %></p>
+
 <p><%= @task.completed.capitalize %></p>
+
+<% @task.categories.each do |cat| %>
+
+    <p><%= link_to(cat.name, category_path(cat.id)) %></p>
+	
+   <% end %>
+   
 <p><%= link_to("Edit task", edit_task_path(@task.id)) %></p>
 
 <%= link_to("All tasks", tasks_path)%>
+
+<p><%= link_to('Home', root_path) %></p>

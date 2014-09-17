@@ -1,6 +1,7 @@
 <h1>Log In</h1>
 
 <%= form_tag login_path do %>
+
   <div class="field">
     <%= label_tag :email %><br />
     <%= text_field_tag :email, params[:email] %>
@@ -15,3 +16,6 @@
 <% end %>
 
 <h2><%= link_to "Not a user? Please sign in.", new_user_path %></h2>
+
+<p><%= link_to('Home', root_path) %></p>
+

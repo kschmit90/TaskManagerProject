@@ -102,6 +102,13 @@ img {
     height: auto;
 }
 
+#main_image {
+  position: relative;
+  float: left;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+
 #footer {
   position: relative;
   float: right;
@@ -129,5 +136,11 @@ h1 {
 
 .field {
   font-family: 'Amatic SC', cursive;
-  color: white;
+  color: black;
+}
+
+p {
+  font-family: 'Amatic SC', cursive;
+  color: black;
+  
 }
