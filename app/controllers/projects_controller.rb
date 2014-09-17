@@ -11,6 +11,7 @@ class ProjectsController < ApplicationController
   
   def create
     @project = Project.new(params[:project])
+    @project.create_slug
     
     
     if @project.save

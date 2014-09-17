@@ -31,7 +31,6 @@ class Project < ActiveRecord::Base
   
   def to_param
     slug
-    
   end
   
   def slug
@@ -41,7 +40,6 @@ class Project < ActiveRecord::Base
   def create_slug(project)
       slug = project.name.downcase.gsub(" ", "-")
       project.update_attributes(:slug => slug)
-    end
   end
-    
-  
+end
+
