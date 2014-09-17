@@ -2,19 +2,20 @@
 
 <%= form_tag login_path do %>
 
-	<div class="field">
-		<%= label_tag :email %><br />
-    	<%= text_field_tag :email, params[:email] %>
-  	</div>
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, params[:email] %>
+  </div>
 
-  	<div class="field">
-    	<%= label_tag :password %><br />
-    	<%= password_field_tag :password %>
-  	</div>
+  <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+  </div>
 
-  	<%= submit_tag "Log In" %>
-	
+  <%= submit_tag "Log In" %>
 <% end %>
+
+<h2><%= link_to "Not a user? Please sign in.", new_user_path %></h2>
 
 <p><%= link_to('Home', root_path) %></p>
 

@@ -1,3 +1,37 @@
-// Place all the styles related to the Tasks controller here.
+/*// Place all the styles related to the Tasks controller here.
 // They will automatically be included in application.css.
+<<<<<<< HEAD
 // You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+#comment_container {
+  background: white;
+  color: black;
+  width: 60%;
+  margin: 10px 200px 10px 200px; 
+  border: 1px solid #05D6FF;
+}
+
+.comments {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  border-bottom: 1px solid #05D6FF;
+}
+
+.comment_timestamp {
+/*  font-family: 'Amatic SC', cursive;*/
+  color: #4D4D4D;
+  text-align: right;
+}
+
+.comments a {
+  color: #7B7B7B;
+}
+
+#new_comment_box {
+  margin: 0 auto;
+  padding-bottom: 15px;
+  width: 90%;
+/*  border-top: 1px solid #05D6FF;*/
+}

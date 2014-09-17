@@ -1,10 +1,10 @@
 class Project < ActiveRecord::Base
-  attr_accessible :deadline, :description, :name, :complete
+  attr_accessible :deadline, :description, :name, :complete, :slug
   
   scope :is_complete, where(:complete => true)
   scope :is_not_complete, where(:complete => false)
   
-  validates :name, presence: true
+  validates :name, :slug, presence: true
   validate :deadline_is_date?
   
   has_many :tasks
@@ -28,4 +28,18 @@ class Project < ActiveRecord::Base
       errors.add(:deadline, 'must be a valid date') 
     end
   end
+  
+  def to_param
+    slug
+  end
+  
+  def slug
+    name.downcase.gsub(" ", "-")
+  end
+
+  def create_slug(project)
+      slug = project.name.downcase.gsub(" ", "-")
+      project.update_attributes(:slug => slug)
+  end
 end
+
