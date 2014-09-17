@@ -1,7 +1,12 @@
 <h1>Categories Home</h1>
+
 <% @categories.each do |c| %>
-<p><%= c.name %></p>
-<p><%= c.description %></p>
-<p><%= link_to('Edit', edit_category_path(c.id)) %></p>
-<p><%= link_to('Delete', category_path(c.id), method: :delete) %>
+
+	<p><%= c.name %></p>
+	<p><%= c.description %></p>
+	<p><%= link_to('Edit', edit_category_path(c.id)) %></p>
+	<p><%= link_to('Delete', category_path(c.id), method: :delete) %>
+		
 <% end %>
+
+<p><%= link_to('Home', root_path) %></p>

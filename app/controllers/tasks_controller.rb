@@ -21,14 +21,18 @@ class TasksController < ApplicationController
   
   def edit
     @task = Task.find(params[:id])
+    
     @projects = Project.all
+  
     @categories = Category.all
     @users = User.all
   end
   
   def add_category
     @task = Task.find(params[:id])
+    
     @category = Category.find(params[:task][:categories].to_i)
+    
     @task.categories << @category
     
     redirect_to task_path(@task.id)
