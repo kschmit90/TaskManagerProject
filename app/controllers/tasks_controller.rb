@@ -1,3 +1,5 @@
+require 'pony'
+
 class TasksController < ApplicationController
   skip_before_filter :authorize, :only => [:index, :show]
   
@@ -27,6 +29,21 @@ class TasksController < ApplicationController
     @categories = Category.all
     @users = User.all
   end
+  
+  def add_user
+    @task = Task.find(params[:id])
+    @task.users << User.find(params[:task][:users].to_i)
+    
+    @user = User.find(params[:task][:users].to_i)
+    binding.pry
+    if Pony.mail(:to => @user.email, :from => 'rpjktest.email@gmail.com', :subject => 'hi ' + @user.name, :body => 'Hello there ' + @user.name + ' your task is ' + @task.name, :via => :smtp, :via_options => {:address => 'smtp.gmail.com',
+    :port => '587', :authentication => :plain, :user_name => 'rpjktest.email@gmail.com', :password => 'Testpassword'}) 
+      redirect_to task_path(@task.id)
+    else
+      render 'edit'
+    end
+  end
+ 
   
   def add_category
     @task = Task.find(params[:id])
