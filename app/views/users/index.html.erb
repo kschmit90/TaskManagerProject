@@ -1,8 +1,9 @@
 <h1>Index</h1>
 
-
 <% @users.each do |u|%>
-<%= link_to u.email, user_path(u.id) %>
+
+	<%= link_to u.email, user_path(u.id) %>
+
 <%end%>
 
 <p><%= link_to('Home', root_path) %></p>

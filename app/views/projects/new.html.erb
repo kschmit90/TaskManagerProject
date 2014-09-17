@@ -1,10 +1,13 @@
 <h1>Add a new project</h1>
 
 <% @project.errors.full_messages.each do |msg| %>
+
   <p><%= msg %></p>
+  
 <% end %>
 
 <%= form_for @project do |f| %>
+  
   <p>Project name: <%= f.text_field :name %></p>
   
   <p>Description <%= f.text_field :description %></p>
