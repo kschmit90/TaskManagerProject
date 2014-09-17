@@ -50,9 +50,24 @@ class TasksController < ApplicationController
     
     @category = Category.find(params[:task][:categories].to_i)
     
-    @task.categories << @category
+    if @task.categories.include? @category
+      render "show"
+    else
+      @task.categories << @category
+      redirect_to task_path(@task.id), :notice => "The category has been successfully added to this task."
+    end
+  end
+  
+  def add_user
+    @task = Task.find(params[:id])
+    @user = User.find(params[:task][:users].to_i)
     
-    redirect_to task_path(@task.id)
+    if @task.users.include? @user
+      render "show"
+    else
+      @task.users << @user
+      redirect_to task_path(@task.id), :notice => "The task has been assigned."
+    end
   end
   
   def update

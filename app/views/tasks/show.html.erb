@@ -12,6 +12,17 @@
   
 <% end %>
 
+<% if @task.users == [] %>
+
+  <p>Not assigned to a user</p>
+  
+<% else %>
+
+<!-- This is returning a user object and not the e-mail attribute for that user object. Not sure why. -->
+  <p>Assigned to: <%= @task.users.each { |user| user.email } %></p>
+  
+<% end %>  
+
 <p>Deadline: <%= @task.deadline %></p>
 
 <p><%= @task.completed.capitalize %></p>
