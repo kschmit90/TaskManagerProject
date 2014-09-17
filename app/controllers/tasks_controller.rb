@@ -35,8 +35,8 @@ class TasksController < ApplicationController
     @task.users << User.find(params[:task][:users].to_i)
     
     @user = User.find(params[:task][:users].to_i)
-
-    if Pony.mail(:to => @user.email, :from => 'rpjktest.email@gmail.com', :subject => 'hi', :body => 'Hello there.', :via => :smtp, :via_options => {:address => 'smtp.gmail.com',
+    binding.pry
+    if Pony.mail(:to => @user.email, :from => 'rpjktest.email@gmail.com', :subject => 'hi ' + @user.name, :body => 'Hello there ' + @user.name + ' your task is ' + @task.name, :via => :smtp, :via_options => {:address => 'smtp.gmail.com',
     :port => '587', :authentication => :plain, :user_name => 'rpjktest.email@gmail.com', :password => 'Testpassword'}) 
       redirect_to task_path(@task.id)
     else
