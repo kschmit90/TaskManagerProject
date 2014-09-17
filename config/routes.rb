@@ -9,5 +9,7 @@ TaskManagerProject::Application.routes.draw do
   
   post "/tasks/:id/add-category" => 'tasks#add_category', :as => "add_category"
   
+  post "/tasks/:id/add-user" => 'tasks#add_user', :as => "add_user"
+  
   resources :users, :tasks, :categories, :projects
 end
