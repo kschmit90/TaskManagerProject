@@ -12,33 +12,35 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     
+    
     if @project.save
-      redirect_to project_path(@project.id), :notice => "New project saved! Way to go."
+      @project.create_slug(@project)
+      redirect_to project_path(@project), :notice => "New project saved! Way to go."
     else
       render "new"
     end    
   end
   
   def edit
-    @project = Project.find(params[:id])
+    @project = Project.find_by_slug(params[:id])
   end
   
   def update
-    @project = Project.find(params[:id])
+    @project = Project.find_by_slug(params[:id])
     
     if @project.update_attributes(params[:project])
-      redirect_to project_path(@project.id), :notice => "Project updated! Way to go."
+      redirect_to project_path(@project), :notice => "Project updated! Way to go."
     else
       render "edit"
     end
   end
   
   def show
-    @project = Project.find(params[:id])
+    @project = Project.find_by_slug(params[:id])
   end
   
   def destroy
-    Project.find(params[:id]).delete
+    Project.find_by_slug(params[:id]).delete
     redirect_to projects_path, :notice => "Your project has been deleted."
   end
   
