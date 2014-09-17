@@ -5,7 +5,8 @@
     <td>Task Name</td>
     <td>Deadline</td>
     <td>Status</td>
-    <td>Assigned to project:</td>
+    <td>Project:</td>
+    <td>Assigned to:</td>
 	
   <% @tasks.each do |t| %>
   
@@ -17,7 +18,22 @@
 	<% if t.project %>
 	
     	<td><%= link_to(t.project.name, project_path(t.project.id)) %></td>
-		
+	<% else %>
+  
+      <td>&nbsp;</td>
+  	
+	<% end %>
+  
+	<% if t.users != [] %>
+	
+    <td><% t.users.each do |u| %>
+              <%= link_to(u.name, user_path(u.id)) %>
+           <% end %></td>
+
+	<% else %>
+  
+      <td>&nbsp;</td>
+  	
 	<% end %>
 	
     <td><%= link_to("Edit", edit_task_path(t.id))%></td>
