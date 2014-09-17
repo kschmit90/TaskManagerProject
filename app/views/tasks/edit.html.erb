@@ -23,7 +23,7 @@
 
 <%= form_for(@task, :url => add_user_path, :method => "post") do |f| %>
 
-  <p>Assigned to: <%= f.collection_select(:users, @users, :id, :name )%> </p>
+  <p>Assigned to: <%= f.collection_select(:users, @users, :id, :email )%> </p>
 
   <p><%= f.submit %></p>
 

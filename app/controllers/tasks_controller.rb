@@ -40,8 +40,7 @@ class TasksController < ApplicationController
   
   def add_user
     @task = Task.find(params[:id])
-    @user = User.find(params[:task][:user].to_i)
-    @task.user << @user
+    @task.users << User.find(params[:task][:users].to_i)
     
     redirect_to task_path(@task.id)
   end
