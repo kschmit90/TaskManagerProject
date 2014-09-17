@@ -12,7 +12,9 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     
+    
     if @project.save
+      create_slug(:project)
       redirect_to project_path(@project.id), :notice => "New project saved! Way to go."
     else
       render "new"
