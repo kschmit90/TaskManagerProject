@@ -23,6 +23,7 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @projects = Project.all
     @categories = Category.all
+    @users = User.all
   end
   
   def add_category
@@ -31,6 +32,12 @@ class TasksController < ApplicationController
     @task.categories << @category
     
     redirect_to task_path(@task.id)
+  end
+  
+  def add_user
+    @task = Task.find(params[:id])
+    @user = User.find(params[:task][:user].to_i)
+    @task.user << @user
   end
   
   def update
