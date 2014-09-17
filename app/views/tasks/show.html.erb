@@ -23,7 +23,7 @@
            <%= u.name %></p>
          <% end %>
   
-<% end %>  
+<% end %>
 
 <p>Deadline: <%= @task.deadline %></p>
 
@@ -34,6 +34,26 @@
     <p><%= link_to(cat.name, category_path(cat.id)) %></p>
 	
    <% end %>
+   
+<% if @task.comments == nil %>
+
+  <p> No comments on this task. Start the conversation by adding one below. </p>
+  
+<% else %>
+
+  <% @task.comments.each do |c| %>
+    <p><%= link_to(c.user.email, user_path(c.user.id))%>: <%= simple_format(c.comment_text)%></p>
+    <% end %>
+<% end %>
+   
+<p>New comment:</p>
+<%= form_for(@comment, :url => add_comment_path, :method => "post") do |f| %>
+
+  <%= f.text_field :comment_text%>
+  
+  <p><%= f.submit %></p>
+  
+  <% end %>
    
 <p><%= link_to("Edit task", edit_task_path(@task.id)) %></p>
 
