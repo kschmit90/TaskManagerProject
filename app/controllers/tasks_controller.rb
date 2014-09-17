@@ -38,6 +38,8 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @user = User.find(params[:task][:user].to_i)
     @task.user << @user
+    
+    redirect_to task_path(@task.id)
   end
   
   def update
