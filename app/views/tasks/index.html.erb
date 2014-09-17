@@ -1,14 +1,16 @@
 <h1>All Tasks</h1>
 
 <table>
-  <tr>
+  <tr id="table_label">
     <td>Task Name</td>
     <td>Deadline</td>
     <td>Status</td>
     <td>Assigned to project:</td>
-	
+</table>
+
+<table class="draggable_task_row">
   <% @tasks.each do |t| %>
-  
+
   <tr>
     <td><%= link_to(t.name, task_path(t.id)) %></td>
     <td><%= t.deadline %></td>
@@ -20,11 +22,10 @@
 		
 	<% end %>
 	
-    <td><%= link_to("Edit", edit_task_path(t.id))%></td>
+    <td><%= link_to("Edit", edit_task_path(t.id)) %></td>
     <td><%= link_to("Delete", task_path(t.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + t.name + '?' })%>
 		
   </tr>
-  
   <% end %>
   
 </table>
