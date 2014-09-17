@@ -9,8 +9,6 @@
   
   <p>Project: <%= f.collection_select(:project_id, @projects, :id, :name )%></p>
     
-  <p>Category: <%= f.collection_select(:categories, @categories, :id, :name )%></p>
-    
   <p><%= f.submit %></p>
 
 <% end %>
@@ -22,11 +20,11 @@
   <p><%= f.submit %></p>
   
 <% end %>
-  
+
 <%= form_for(@task, :url => add_user_path, :method => "post") do |f| %>
-  
+
   <p>Assigned to: <%= f.collection_select(:users, @users, :id, :name )%> </p>
-  
+
   <p><%= f.submit %></p>
 
 <% end %>
