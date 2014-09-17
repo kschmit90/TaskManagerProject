@@ -8,10 +8,8 @@
   <p>Complete? <%= f.check_box :complete%></p>
   
   <p>Project: <%= f.collection_select(:project_id, @projects, :id, :name )%></p>
-  
-  <p>Task: <%= f.collection_select(:ca, @categories, :id, :name )%></p>
-  
-   <p>Category: <%= f.collection_select(:categories, @categories, :id, :name )%></p>
+    
+  <p>Category: <%= f.collection_select(:categories, @categories, :id, :name )%></p>
     
   <p><%= f.submit %></p>
 
