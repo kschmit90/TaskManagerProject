@@ -17,6 +17,6 @@ class LoginsController < ApplicationController
   
   def destroy
     session[:user_id] = nil # Could also call `reset_session` to clear the entire session.
-    redirect_to users_path
+    redirect_to root_path
   end  
 end

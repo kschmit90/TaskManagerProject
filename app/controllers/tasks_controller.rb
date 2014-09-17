@@ -69,7 +69,7 @@ class TasksController < ApplicationController
     if @comment.save
       redirect_to task_path(@task.id), :notice => "New comment saved! Way to go."
     else
-      render "show", :alert => "Your comment was not successfully saved."
+      render "login", :alert => "You must be logged in to do leave a comment."
     end
   end
   
