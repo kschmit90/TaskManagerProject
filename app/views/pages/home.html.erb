@@ -1,5 +1,33 @@
-<div id="main_image">
-      <img src="../../assets/images/task_manager800.jpg" width="650" height="407" alt="Get Organised!">
+<div id="welcome">
+  <h1>Welcome, let's get started..!</h1>
+  <h6>Already a user, log in below...</h6>
+  
+    <%= form_tag login_path do %>
+
+    	<div class="field">
+    		<%= label_tag :email %><br />
+        	<%= text_field_tag :email, params[:email] %>
+      	</div>
+
+      	<div class="field">
+        	<%= label_tag :password %><br />
+        	<%= password_field_tag :password %>
+      	</div>
+
+      	<%= submit_tag "Log In" %>
     </div>
     
-<h1>Welcome, let's get started..!</h1>
+        <% end %>
+  
+<div id="welcome_2">
+  <h6></h6>
+  <h6></h6>
+  <h6>Or create a new account...</h6>
+  
+  <%= button_to "New User", {action: "new", :controller=>"users"}, method: :get   %>
+  
+</div>
+
+   
+
+    
