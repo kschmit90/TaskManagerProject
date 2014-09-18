@@ -1,12 +1,7 @@
+
 <div class="adding_tasks">
   
     <h1>Add a new task</h1>
-
-     <% @task.errors.full_messages.each do |msg| %>
-
-      <p><%= msg %></p>
-
-    <% end %>
 
     <%= form_for @task do |f| %>
 
@@ -19,46 +14,59 @@
     <% end %>
        
   </div>
- 
+  
 <div class="users_tasks">
+<% if @tasks == nil %>
+  
+    <p>"You have no tasks."</p>
+
+  <% else %>
         
-    <h1>Show detail page for <%= @task.name %></h1>
 
-    <p>Task name: <%= @task.name %></p>
+    <h1>Show detail page for <%= @tasks.name %></h1>
 
-    <% if @task.project == nil %>
+    <p>Task name: <%= @tasks.name %></p>
+
+    <% if @tasks.project == nil %>
   
           <p>Not assigned to a project</p>
   
         <% else %>
 
-          <p>Assigned to Project: <%= @task.project.name %></p>
+          <p>Assigned to Project: <%= @tasks.project.name %></p>
   
         <% end %>
 
-        <% if @task.users == [] %>
+        <% if @tasks.users == [] %>
 
           <p>Not assigned to a user</p>
   
         <% else %>
 
-          <p>Assigned to: <% @task.users.each do |u| %>
+          <p>Assigned to: <% @tasks.users.each do |u| %>
                    <%= u.name %></p>
                  <% end %>
   
         <% end %>
 
-        <p>Deadline: <%= @task.deadline %></p>
+        <p>Deadline: <%= @tasks.deadline %></p>
 
-        <p><%= @task.completed.capitalize %></p>
+        <p><%= @tasks.completed.capitalize %></p>
 
-        <% @task.categories.each do |cat| %>
+        <% @tasks.categories.each do |cat| %>
 
             <p><%= link_to(cat.name, category_path(cat.id)) %></p>
 	
-           <% end %>
+        <% end %>
+      <%end%>
      
-            </div>
+</div>
+
+
+            
+    
+  
+      
              
  
              
