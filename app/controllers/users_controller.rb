@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
-      redirect_to user_path(@user.id), :notice => "The user has been created."
+      redirect_to user_path(@user.id)
     else
       raise "User could not be saved."
     end
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.update_attributes(params[:user])
-      redirect_to user_path(@user.id), :notice => "User info updated! Way to go."
+      redirect_to user_path(@user.id)
     else
       render "edit"
     end
@@ -41,6 +41,6 @@ class UsersController < ApplicationController
      @user = User.find(params[:id])
      @user.destroy
 
-     redirect_to users_path, :notice => "The user has been deleted."
+     redirect_to users_path
    end
 end
