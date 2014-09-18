@@ -3,31 +3,36 @@
 }
 
 .errors {
-  border-style: solid;
-  border-color: red;
-  margin:  5px;
-  padding: 5px 0 0 5px;
+	border-style: solid;
+	border-color: red;
+	margin:  5px;
+	padding: 5px 0 0 5px;
 }
 body {
 	background: url("http://strongarmbrand.com/SitePages/Backgrounds/bkgnotebook_paper.jpg");
 	background-repeat: repeat;
-  background-size: 100%;
-  min-height: 100%;
-  height: 100%;
+	background-size: 100%;
+	min-height: 100%;
+	height: 100%;
 }
 
+input[type=submit] {
+	position: relative;
+	left: 10px;
+} 
+
 a {
-   font-family: 'Amatic SC', cursive;
-   display: block;
-   width: 100px;
-   padding: 5px;
-   text-align: center;
-   color: white;
-   text-decoration: none;
+	font-family: 'Amatic SC', cursive;
+	display: block;
+	width: 100px;
+	padding: 5px;
+	text-align: center;
+	color: white;
+	text-decoration: none;
 }
 
 #content {
-  clear: both;
+	clear: both;
 	background: #2A79C7;
 	width: 1000px;
 	margin: 0 auto;
@@ -36,14 +41,14 @@ a {
 }
 
 #auto_height {
-  position: absolute;
+	position: absolute;
 	background: #2A79C7;
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
 	z-index: 1;
-    position: absolute;
-    height: auto;
+	position: absolute;
+	height: auto;
 }
 
 #container {
@@ -52,7 +57,7 @@ a {
 	margin: 0 auto;
 	font-family: sans-serif;
 	height: auto;
-  z-index: 2;
+	z-index: 2;
 }
 
 header {
@@ -75,8 +80,8 @@ header {
 }
 
 header nav {
-  position: relative;
-  bottom: 15px;
+	position: relative;
+	bottom: 15px;
 	float: right;
 	margin-right: -37px;
 	margin-top: 6px;
@@ -84,9 +89,9 @@ header nav {
 }
 
 header nav a{
-  position: relative;
-  bottom: 49px;
-  left: 18px;
+	position: relative;
+	bottom: 49px;
+	left: 18px;
 }
 
 header ul li {
@@ -102,98 +107,98 @@ header form {
 }
 
 #main_image img {
-  position: relative;
-  width: 1000px;
-  z-index: 20;
+	position: relative;
+	width: 1000px;
+	z-index: 20;
 }
 
 #main_image_2 img {
-  position: relative;
-  width: 1000px;
-  z-index: 20;
+	position: relative;
+	width: 1000px;
+	z-index: 20;
 }
 
 #welcome {
-  position: relative;
-  float: left;
-  width: 500px;
+	position: relative;
+	float: left;
+	width: 500px;
 }
 
 #welcome_2 {
-  position: relative;
-  float: left;
-  width: 500px;
+	position: relative;
+	float: left;
+	width: 500px;
 }
 
 img {
-    width:50px;
-    height: auto;
+	width:50px;
+	height: auto;
 }
 
 #footer {
-  position: relative;
-  margin: 0 auto;
-  height: 80px;
-  width: 1000px;
+	position: relative;
+	margin: 0 auto;
+	height: 80px;
+	width: 1000px;
 	text-align: center;
 	background-color:#05D6FF;;
 	border-color: #e7e7e7;
-  bottom: 0;
-  z-index: 20;
+	bottom: 0;
+	z-index: 20;
 }
 
 #footer ul li {
-  display: inline-block;
-  list-style-type: none;
-  margin-top: 5px;
-  font-family: 'Amatic SC', cursive;  
-  color: white;
+	display: inline-block;
+	list-style-type: none;
+	margin-top: 5px;
+	font-family: 'Amatic SC', cursive;  
+	color: white;
 }
 
 h1 {
-  font-family: 'Amatic SC', cursive;
-  color: white;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  margin-left: 10px;
+	font-family: 'Amatic SC', cursive;
+	color: white;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	margin-left: 10px;
 }
 
 h6 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 30px;
-  color: black;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
+	font-family: 'Amatic SC', cursive;
+	font-size: 30px;
+	color: black;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 10px;
 }
 
 .field {
-  font-family: 'Amatic SC', cursive;
-  font-size: 20px;
-  color: black;
-  margin-left: 10px;
+	font-family: 'Amatic SC', cursive;
+	font-size: 20px;
+	color: black;
+	margin-left: 10px;
 }
 
 p {
-  font-family: 'Amatic SC', cursive;
-  color: black;
+	font-family: 'Amatic SC', cursive;
+	color: black;
   
 }
 
 #adding_tasks {
-  position: relative;
-  float: left;
-  width: 250px;
+	position: relative;
+	float: left;
+	width: 250px;
 }
 
 #users_tasks {
-  position: relative;
-  float: left;
-  width: 500px;
+	position: relative;
+	float: left;
+	width: 500px;
 }
 
 #activity_feed {
-  position: relative;
-  float: left;
-  width: 250px;
+	position: relative;
+	float: left;
+	width: 250px;
 }
