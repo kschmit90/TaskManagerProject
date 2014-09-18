@@ -1,4 +1,7 @@
 TaskManagerProject::Application.routes.draw do
+  resources :activities
+
+
   root :to => 'pages#home'
   
   # email Routes
