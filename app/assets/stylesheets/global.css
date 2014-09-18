@@ -180,20 +180,26 @@ p {
   
 }
 
-#adding_tasks {
+.adding_tasks {
   position: relative;
   float: left;
   width: 250px;
 }
 
-#users_tasks {
+.users_tasks {
   position: relative;
   float: left;
   width: 500px;
+  text-align: center;
 }
 
-#activity_feed {
+.users_tasks .a{
+  align: center;
+}
+
+.activity_feed {
   position: relative;
   float: left;
   width: 250px;
+  text-align: center;
 }
