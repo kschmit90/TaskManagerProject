@@ -1,0 +1,101 @@
+<div class="adding_tasks">
+  
+    <h1>Add a new task</h1>
+
+     <% @task.errors.full_messages.each do |msg| %>
+
+      <p><%= msg %></p>
+
+    <% end %>
+
+    <%= form_for @task do |f| %>
+
+      <p>Task name: <%= f.text_field :name %></p>
+  
+      <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline%></p>
+  
+      <%= f.submit %>
+  
+    <% end %>
+       
+  </div>
+ 
+<div class="users_tasks">
+        
+    <h1>Show detail page for <%= @task.name %></h1>
+
+    <p>Task name: <%= @task.name %></p>
+
+    <% if @task.project == nil %>
+  
+          <p>Not assigned to a project</p>
+  
+        <% else %>
+
+          <p>Assigned to Project: <%= @task.project.name %></p>
+  
+        <% end %>
+
+        <% if @task.users == [] %>
+
+          <p>Not assigned to a user</p>
+  
+        <% else %>
+
+          <p>Assigned to: <% @task.users.each do |u| %>
+                   <%= u.name %></p>
+                 <% end %>
+  
+        <% end %>
+
+        <p>Deadline: <%= @task.deadline %></p>
+
+        <p><%= @task.completed.capitalize %></p>
+
+        <% @task.categories.each do |cat| %>
+
+            <p><%= link_to(cat.name, category_path(cat.id)) %></p>
+	
+           <% end %>
+     
+            </div>
+             
+ 
+             
+ 
+ 
+             
+ 
+            <div class="activity_feed">
+ 
+              <h4>Activity Feed</h4><hr>
+              <div class="panel">
+                <h5><a href="#">Post Title 1</a></h5>
+ 
+                <h6 class="subheader">
+                  Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Suspendisse ultrices ornare tempor...
+                </h6>
+ 
+                <h6><a href="#">Read More »</a></h6>
+              </div>
+ 
+              <div class="panel hide-for-small">
+                <h5><a href="#">Post Title 2 »</a></h5>
+              </div>
+ 
+              <div class="panel hide-for-small">
+                <h5><a href="#">Post Title 3 »</a></h5>
+              </div>
+ 
+              <a href="#" class="right">Go To Blog »</a>
+ 
+            </div>
+ 
+             
+ 
+          </div>
+        </div>
+      </div>
+
+ 
+    
