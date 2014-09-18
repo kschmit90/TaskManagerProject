@@ -18,6 +18,7 @@ class LoginsController < ApplicationController
   
   def destroy
     session[:user_id] = nil # Could also call `reset_session` to clear the entire session.
+    flash[:notice] = "You have successfully Logged out!"
     redirect_to root_path
   end  
 end

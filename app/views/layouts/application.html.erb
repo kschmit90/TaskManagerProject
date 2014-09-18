@@ -75,13 +75,16 @@
 	  
 	<div id="content">
 		
-    	<% if flash[:notice] %>
-          	<p id="notice"><%= flash[:notice] %></p>
+    <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg , class: flash %>
+        <% end -%>
+    	<!-- <% if flash[:notice] %>
+            <p id="notice"><%= flash[:notice] %></p>
         <% end %>
-		
+
         <% if flash[:alert] %>
-         	<p id="alert"><%= flash[:alert] %></p>
-        <% end %>
+           <p id="alert"><%= flash[:alert] %></p>
+        <% end %> -->
 
       
   		 	<%= yield %>

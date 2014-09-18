@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   skip_before_filter :authorize
-  
+  def home
+    @user = User.new
+  end
   def dashboard
     @task = Task.new
     @tasks = Task.all
