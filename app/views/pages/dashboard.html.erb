@@ -68,29 +68,11 @@
  
             <div class="activity_feed">
  
-              <h4>Activity Feed</h4><hr>
-              <div class="panel">
-                <h5><a href="#">Post Title 1</a></h5>
- 
-                <h6 class="subheader">
-                  Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Suspendisse ultrices ornare tempor...
-                </h6>
- 
-                <h6><a href="#">Read More »</a></h6>
-              </div>
- 
-              <div class="panel hide-for-small">
-                <h5><a href="#">Post Title 2 »</a></h5>
-              </div>
- 
-              <div class="panel hide-for-small">
-                <h5><a href="#">Post Title 3 »</a></h5>
-              </div>
- 
-              <a href="#" class="right">Go To Blog »</a>
- 
-            </div>
- 
+              <% @activities.each do |activity| %>
+                  <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
+
+	
+              <% end %>
              
  
           </div>
