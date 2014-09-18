@@ -2,6 +2,4 @@
 
 <% @activities.each do |activity| %>
     <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
-
-	
 <% end %>
