@@ -54,6 +54,7 @@ header {
 #header_content {
 	display: inline-block;
 	float: left;
+	height: 80px;
 }
 
 #header_content p {
@@ -69,6 +70,7 @@ header nav {
 	float: right;
 	margin-right: -37px;
 	margin-top: 6px;
+	height: 80px;
 }
 
 header nav a{
