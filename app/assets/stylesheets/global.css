@@ -132,9 +132,9 @@ img {
 }
 
 #footer ul li {
-	display: inline-block;
+  display: inline-block;
   list-style-type: none;
-	margin-top: 5px;
+  margin-top: 5px;
   font-family: 'Amatic SC', cursive;  
   color: white;
 }
