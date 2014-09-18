@@ -12,9 +12,10 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     
-    
     if @project.save
       @project.create_slug(@project)
+      track_activity @project
+      
       redirect_to project_path(@project), :notice => "New project saved! Way to go."
     else
       render "new"
@@ -29,6 +30,9 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_slug(params[:id])
     
     if @project.update_attributes(params[:project])
+      @project.create_slug(@project)
+      track_activity @project
+      
       redirect_to project_path(@project), :notice => "Project updated! Way to go."
     else
       render "edit"
@@ -40,7 +44,15 @@ class ProjectsController < ApplicationController
   end
   
   def destroy
+    binding.pry
+    
+    @project_id = Project.find_by_slug(params[:id]).id
+    @project = Project.find_by_slug(params[:id])
+    Activity.where(trackable_type: "Project", trackable_id: @project_id).each do |a|
+      a.delete
+    end
     Project.find_by_slug(params[:id]).delete
+        
     redirect_to projects_path, :notice => "Your project has been deleted."
   end
   

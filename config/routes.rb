@@ -20,5 +20,5 @@ TaskManagerProject::Application.routes.draw do
   
   post "/tasks/:id/add-comment" => 'tasks#add_comment', :as => "add_comment"
   
-  resources :users, :tasks, :categories, :projects
+  resources :users, :tasks, :categories, :projects, :activities
 end

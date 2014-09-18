@@ -53,6 +53,17 @@ a {
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
+	height: 715px;
+  z-index: 2;
+}
+
+#auto_height {
+	background: #2A79C7;
+	width: 1000px;
+	margin: 0 auto;
+	font-family: sans-serif;
+  z-index: 1;
+  position: absolute;
   min-height: 100%;
 }
 

@@ -17,7 +17,7 @@
 
 </br>
 
-<%= form_for(@task, :url => add_category_path, :method => "post") do |f| %>
+<%= form_for(@task, :url => add_category_path, :method => "post", :action => "update") do |f| %>
 
   <p>Category: <%= f.collection_select(:categories, @categories, :id, :name )%><%= f.submit "Add category" %></p>
   

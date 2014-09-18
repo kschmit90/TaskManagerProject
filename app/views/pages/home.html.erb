@@ -26,4 +26,9 @@
   
   <%= button_to "New User", {action: "new", :controller=>"users"}, method: :get   %>
   
+  <p><%= link_to("Create Task", new_task_path)%></p>
+  <p><%= link_to("Create Category", new_category_path)%></p>
+  <p><%= link_to("Create Project", new_project_path)%></p>
+
+  
 </div>
