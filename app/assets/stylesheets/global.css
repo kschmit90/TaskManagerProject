@@ -193,7 +193,7 @@ p {
   text-align: center;
 }
 
-.users_tasks .a{
+.users_tasks a:link{
   align: center;
 }
 
