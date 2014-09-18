@@ -22,9 +22,13 @@
 <body>
 	<div id="container">
 		<header>
-			<div id="header_content">
+			<div id="header_content">				
   			<p><a href="/">TaskManager</a></p>
 			</div>
+			<% if current_user %>
+				<span>Logged in as: <%= current_user.email %></span>
+			<% end %>
+			
 			  <nav>
 
           <% if current_user %> 
