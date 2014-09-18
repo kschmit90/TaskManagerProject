@@ -1,7 +1,13 @@
-.error{
-	color: red;
+.errors p{
+	color: white;
 }
 
+.errors {
+  border-style: solid;
+  border-color: red;
+  margin:  5px;
+  padding: 5px 0 0 5px;
+}
 body {
 	background: url("http://strongarmbrand.com/SitePages/Backgrounds/bkgnotebook_paper.jpg");
 	background-repeat: repeat;

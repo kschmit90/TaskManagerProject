@@ -1,5 +1,12 @@
 <h1>Sign Up</h1>
+<div class="errors">
+<% @user.errors.full_messages.each do |msg| %>
 
+  <p><%= msg %></p>
+  
+  <% end %>
+</div>
+  
 <%= form_for @user, :method => :create do |f| %>
 
   <p>
