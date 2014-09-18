@@ -16,34 +16,6 @@ body {
   height: 100%;
 }
 
-header input[type=text] {
-	padding:5px; 
-	border:2px solid #ccc; 
-	-webkit-border-radius: 5px;
-    border-radius: 5px;
-	position: relative;
-	right: 5px;
-	bottom: 5px;
-}
-
-header input[type=text]:focus {
-	border-color:#333; 
-}
-
-header input[type=submit] {
-	padding: 5px 15px;
-	background: url("images/user_select.png");
-  height: 100%;
-	border: 0 none;
-	cursor: pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	background-repeat: no-repeat;
-	background-position-x: 0px;
-	background-position-y: 6px;
-	background-size: 18px;
-}
-
 a {
    font-family: 'Amatic SC', cursive;
    display: block;
@@ -54,23 +26,23 @@ a {
    text-decoration: none;
 }
 
-#container {
-	background: #2A79C7;
-	width: 1000px;
-	margin: 0 auto;
-	font-family: sans-serif;
-	height: 715px;
-  z-index: 2;
-}
-
 #auto_height {
 	background: #2A79C7;
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
-  z-index: 1;
-  position: absolute;
-  min-height: 100%;
+	z-index: 1;
+    position: absolute;
+    height: auto;
+}
+
+#container {
+	background: #2A79C7;
+	width: 1000px;
+	margin: 0 auto;
+	font-family: sans-serif;
+	height: 680px;
+    z-index: 2;
 }
 
 header {
@@ -82,6 +54,7 @@ header {
 #header_content {
 	display: inline-block;
 	float: left;
+	height: 80px;
 }
 
 #header_content p {
@@ -97,6 +70,7 @@ header nav {
 	float: right;
 	margin-right: -37px;
 	margin-top: 6px;
+	height: 80px;
 }
 
 header nav a{
@@ -119,12 +93,14 @@ header form {
 
 #main_image img {
   position: relative;
+  bottom: 42px;  
   float: left;
   width: 1000px;
 }
 
 #main_image_2 img {
   position: relative;
+  bottom: 42px;
   float: left;
   width: 1000px;
 }
@@ -147,11 +123,10 @@ img {
 }
 
 #footer {
-  position: relative;
-  float: right;
+  margin: 0 auto;
   height: 80px;
   width: 1000px;
-	margin-top: 500px;
+/*  margin-top: 500px;*/
 	text-align: center;
 	background-color:#05D6FF;;
 	border-color: #e7e7e7;
@@ -159,9 +134,9 @@ img {
 }
 
 #footer ul li {
-	display: inline-block;
+  display: inline-block;
   list-style-type: none;
-	margin-top: 5px;
+  margin-top: 5px;
   font-family: 'Amatic SC', cursive;  
   color: white;
 }
