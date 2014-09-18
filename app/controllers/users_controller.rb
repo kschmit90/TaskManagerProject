@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       
       redirect_to user_path(@user.id)
     else
-      raise "User could not be saved."
+      render "new"
     end
   end
     
