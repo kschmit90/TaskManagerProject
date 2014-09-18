@@ -7,8 +7,12 @@
   background: white;
   color: black;
   width: 60%;
-  margin: 10px 200px 10px 200px; 
-  border: 1px solid #05D6FF;
+  margin: 10px 200px 0 200px; 
+  border-left: 1px solid #05D6FF;
+  border-right: 1px solid #05D6FF;
+  border-top: 1px solid #05D6FF;
+/*  overflow: scroll;
+  height: 400px;*/
 }
 
 .comments {
@@ -32,6 +36,8 @@
 #new_comment_box {
   margin: 0 auto;
   padding-bottom: 15px;
-  width: 90%;
+  background: white;
+  color: black;
+  width: 60%;
 /*  border-top: 1px solid #05D6FF;*/
 }

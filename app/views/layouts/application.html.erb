@@ -5,7 +5,10 @@
   <meta charset="utf-8">
   <title>TaskManager</title>
   <link href='http://fonts.googleapis.com/css?family=Amatic+SC|Zeyada' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <meta name="description" content="Get Organised!">
+
+  
   
 <!-- DO NOT CHANGE THIS -->
   <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -19,6 +22,7 @@
 <body>
   <%= session %>
 	<div id="container">
+    <div id="auto_height">
 		<header>
 			<div id="header_content">
   			<p><a href="/">TaskManager</a></p>
@@ -27,19 +31,27 @@
 				<ul>
 					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
 					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
-          <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/login">Login</a></li>
 
+          <% if current_user %> 
+            <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/logout.svg"><a href="/logout">Logout</a></li>
+          <% else %>
+            <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/login">Login</a></li>
+          <% end %>
 				 
 				</ul>
 			</nav>
 			
 		</header>
+    
+    <div id="main_image">
+      <img src="/task_manager800.jpg" width="650" height="407" alt="Task Manager800">
+    </div>
 		
 		<div id="content">
 			
 		 	<%= yield %>
 		 
-    <div id="footer">
+    <div id="footer" style="margin-top: 0px; top: 529px;">
         <ul>
           <li><a href="/projects">View all projects</a></li>
           <li><a href="/tasks">View all tasks</a></li>
@@ -48,6 +60,7 @@
           <li> 2014 </li>
         </ul>
       </div>
+    </div>
 </body>
 </html>
 
