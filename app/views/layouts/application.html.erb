@@ -21,13 +21,11 @@
 
 <body>
 	<div id="container">
-    <div id="auto_height">
 		<header>
 			<div id="header_content">
   			<p><a href="/">TaskManager</a></p>
 			</div>
-			<nav>
-				<ul>
+			  <nav>
 
           <% if current_user %> 
     				<ul>
@@ -35,15 +33,15 @@
     					<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/projects/{#@user}/show">Projects</a></li>
           
             <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/logout.svg"><a href="/logout">Logout</a></li>
+            </ul>
           <% else %>
+          <ul>
             <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/login">Login</a></li>
   					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
   					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
+          </ul>
           <% end %>
-				 
-				</ul>
-			</nav>
-    </div>
+			 </nav>
     </header>
       
       <% if current_user %> 
@@ -52,28 +50,31 @@
       </div>
       <% else %>
       <div id="main_image">
-        <img src="/task_managerc1000.jpg" width="1000" height="250" alt="Let's Get Organized!">
+        <img src="/task_managerc1000.jpg" width="1000" height="370" alt="Let's Get Organzied!">
       </div>
       <% end %>
-		
+      
 		<div id="content">
-      <% if flash[:notice] %>
-        <p id="notice"><%= flash[:notice] %></p>
-      <% end %>
-      <% if flash[:alert] %>
-        <p id="alert"><%= flash[:alert] %></p>
-      <% end %>
+      <div id="auto_height">
+        <% if flash[:notice] %>
+          <p id="notice"><%= flash[:notice] %></p>
+        <% end %>
+        <% if flash[:alert] %>
+          <p id="alert"><%= flash[:alert] %></p>
+        <% end %>
+      
+  		 	<%= yield %>
+        <div id="footer" style="margin-top: 0px; top: 529px;">
+          <ul>
+            <li><a href="/projects">View all projects</a></li>
+            <li><a href="/tasks">View all tasks</a></li>
+      			<li><a href="/">TaskManager</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li> 2014 </li>
+          </ul>
+        </div>
+      </div>
     </div>
-		 	<%= yield %>
-		 </div>
-    <div id="footer" style="margin-top: 0px; top: 529px;">
-        <ul>
-          <li><a href="/projects">View all projects</a></li>
-          <li><a href="/tasks">View all tasks</a></li>
-    			<li><a href="/">TaskManager</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li> 2014 </li>
-        </ul>
-    </div>
+  </div>
 </body>
 </html>
