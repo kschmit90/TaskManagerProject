@@ -210,8 +210,8 @@ p {
   text-align: center;
 }
 
-.users_tasks a:link{
-  align: center;
+.users_tasks table{
+ margin: 0 auto;
 }
 
 .activity_feed {

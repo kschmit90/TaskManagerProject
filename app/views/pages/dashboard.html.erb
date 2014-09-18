@@ -17,10 +17,10 @@
   
 <div class="users_tasks">
   <% @tasks.each do |t| %>
-  
+  <table>
   <tr>
-	<td><%= t.order %></td>
-    <td align="center"><%= link_to(t.name, task_path(t.id)) %></td>
+	  <td><%= t.order %></td>
+    <td><%= link_to(t.name, task_path(t.id)) %></td>
     <td><%= t.deadline %></td>
     <td><%= t.completed.capitalize %></td>
 	
@@ -36,7 +36,7 @@
 	<% if t.users != [] %>
 	
     <td><% t.users.each do |u| %>
-              <%= link_to(u.name, user_path(u.id)) %>
+              <p><%= link_to(u.name, user_path(u.id)) %></p>
            <% end %></td>
 
 	<% else %>
@@ -49,6 +49,7 @@
     <td><%= link_to("Delete", task_path(t.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + t.name + '?' })%>
 		
   </tr>
+</table>
   <% end %>
      
 </div>
