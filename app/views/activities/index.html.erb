@@ -1,0 +1,7 @@
+<h1>Activities</h1>
+
+<% @activities.each do |activity| %>
+    <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
+
+	
+<% end %>

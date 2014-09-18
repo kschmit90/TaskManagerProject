@@ -29,23 +29,33 @@
 			</div>
 			<nav>
 				<ul>
-					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
-					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
 
           <% if current_user %> 
+    				<ul>
+    					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
+    					<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/projects/{#@user}/show">Projects</a></li>
+          
             <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/logout.svg"><a href="/logout">Logout</a></li>
           <% else %>
             <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/login">Login</a></li>
+  					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
+  					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
           <% end %>
 				 
 				</ul>
 			</nav>
 			
-		</header>
-    
-    <div id="main_image">
-      <img src="/task_manager800.jpg" width="650" height="407" alt="Task Manager800">
-    </div>
+    </header>
+      
+      <% if current_user %> 
+      <div id="main_image_2">
+       <img src="/task_master_b1000.jpg" width="1000" height="370" alt="Let's Get Organzied!">
+      </div>
+      <% else %>
+      <div id="main_image">
+        <img src="/task_manager1000.jpg" width="1000" height="370" alt="Let's Get Organized!">
+      </div>
+      <% end %>
 		
 		<div id="content">
       <% if flash[:notice] %>
@@ -69,4 +79,3 @@
     </div>
 </body>
 </html>
-

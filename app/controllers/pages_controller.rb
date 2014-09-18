@@ -2,7 +2,9 @@ class PagesController < ApplicationController
   skip_before_filter :authorize
   
   def dashboard
-    @tasks = User.tasks
+
+    @task = Task.all
+
     
   end
 end

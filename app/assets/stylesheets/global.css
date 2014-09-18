@@ -123,6 +123,12 @@ header form {
   width: 1000px;
 }
 
+#main_image_2 img {
+  position: relative;
+  float: left;
+  width: 1000px;
+}
+
 #welcome {
   position: relative;
   float: left;
@@ -188,4 +194,22 @@ p {
   font-family: 'Amatic SC', cursive;
   color: black;
   
+}
+
+#adding_tasks {
+  position: relative;
+  float: left;
+  width: 250px;
+}
+
+#users_tasks {
+  position: relative;
+  float: left;
+  width: 500px;
+}
+
+#activity_feed {
+  position: relative;
+  float: left;
+  width: 250px;
 }

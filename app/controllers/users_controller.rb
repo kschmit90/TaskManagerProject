@@ -9,6 +9,8 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save
+      track_activity @user
+      
       redirect_to user_path(@user.id)
     else
       render "new"
@@ -31,6 +33,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     
     if @user.update_attributes(params[:user])
+      track_activity @user
+      
       redirect_to user_path(@user.id), :notice => "User info updated! Way to go."
     else
       render "edit"
@@ -40,6 +44,7 @@ class UsersController < ApplicationController
   def destroy
      @user = User.find(params[:id])
      @user.destroy
+     
 
      redirect_to users_path
    end
