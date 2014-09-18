@@ -9,7 +9,7 @@ class LoginsController < ApplicationController
     
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to users_path
+      redirect_to dashboard_path
     else
       raise "Invalid login."
     end
