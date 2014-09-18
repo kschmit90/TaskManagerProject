@@ -1,0 +1,26 @@
+.errors p{
+	color: white;
+}
+
+.errors {
+	border-style: solid;
+	border-color: red;
+}
+
+body {
+	background: url("http://strongarmbrand.com/SitePages/Backgrounds/bkgnotebook_paper.jpg");
+	background-repeat: repeat;
+}
+
+
+a {
+	font-family: 'Amatic SC', cursive;
+	text-align: center;
+	color: white;
+	text-decoration: none;
+}
+
+#content {
+	background: #2A79C7;
+	font-family: sans-serif;
+}

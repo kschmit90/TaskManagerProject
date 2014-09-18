@@ -1,33 +1,22 @@
-.errors p{
-	color: white;
-}
-
 .errors {
-	border-style: solid;
-	border-color: red;
 	margin:  5px;
 	padding: 5px 0 0 5px;
 }
+
 body {
-	background: url("http://strongarmbrand.com/SitePages/Backgrounds/bkgnotebook_paper.jpg");
-	background-repeat: repeat;
   background-size: 100%;
   min-height: 100%;
 }
 
-input[type=submit] {
-	position: relative;
-	left: 10px;
-} 
+/*input[type=submit] {
+  position: relative;
+  left: 10px;
+}*/
 
 a {
-	font-family: 'Amatic SC', cursive;
 	display: block;
 	width: 100px;
 	padding: 5px;
-	text-align: center;
-	color: white;
-	text-decoration: none;
 }
 
 span {
@@ -37,10 +26,8 @@ span {
 
 #content {
 	clear: both;
-	background: #2A79C7;
 	width: 1000px;
 	margin: 0 auto;
-	font-family: sans-serif;
 	height: 100%;
 }
 
