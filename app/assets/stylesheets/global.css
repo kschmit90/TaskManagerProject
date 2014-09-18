@@ -16,34 +16,6 @@ body {
   height: 100%;
 }
 
-header input[type=text] {
-	padding:5px; 
-	border:2px solid #ccc; 
-	-webkit-border-radius: 5px;
-    border-radius: 5px;
-	position: relative;
-	right: 5px;
-	bottom: 5px;
-}
-
-header input[type=text]:focus {
-	border-color:#333; 
-}
-
-header input[type=submit] {
-	padding: 5px 15px;
-	background: url("images/user_select.png");
-  height: 100%;
-	border: 0 none;
-	cursor: pointer;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-	background-repeat: no-repeat;
-	background-position-x: 0px;
-	background-position-y: 6px;
-	background-size: 18px;
-}
-
 a {
    font-family: 'Amatic SC', cursive;
    display: block;
@@ -119,12 +91,14 @@ header form {
 
 #main_image img {
   position: relative;
+  bottom: 42px;  
   float: left;
   width: 1000px;
 }
 
 #main_image_2 img {
   position: relative;
+  bottom: 42px;
   float: left;
   width: 1000px;
 }
