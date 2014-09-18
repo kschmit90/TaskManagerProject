@@ -15,6 +15,22 @@ body {
   min-height: 100%;
 }
 
+/*<<<<<<< HEAD
+.input{
+padding:5px;
+font-size:16px;
+font-family:'Lucida Casual', 'Comic Sans MS';
+}
+
+a {
+   font-family: 'Amatic SC', cursive, 'Times New Roman';
+   display: block;
+   width: 100px;
+   padding: 5px;
+   text-align: center;
+   color: white;
+   text-decoration: none;
+=======*/
 input[type=submit] {
 	position: relative;
 	left: 10px;
@@ -159,12 +175,19 @@ img {
   height: 80px;
 }
 
+#footer a {
+  color: black;
+  font-size: 25px;
+  width: 135px;
+}
+
 #footer ul li {
-	display: inline-block;
-	list-style-type: none;
-	margin-top: 5px;
-	font-family: 'Amatic SC', cursive;  
-	color: white;
+  display: inline-block;
+  list-style-type: none;
+  margin-top: 5px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  color: black;
 }
 
 h1 {
@@ -185,16 +208,23 @@ h6 {
 }
 
 .field {
-	font-family: 'Amatic SC', cursive;
-	font-size: 20px;
-	color: black;
-	margin-left: 10px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+  color: black;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.label_tag {
+  font-family: 'Arial', cursive;
+  font-size: 20px;
+  color: black;
 }
 
 p {
-	font-family: 'Amatic SC', cursive;
-	color: black;
-  
+  font-family: 'Amatic SC', cursive;
+  color: black;
+  font-size: 18px;
 }
 
 .adding_tasks {
