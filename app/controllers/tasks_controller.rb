@@ -42,10 +42,6 @@ class TasksController < ApplicationController
       render "show"
     else
       @task.categories << @category
-      #
-      # Tracking task activty when user assigned to task action => update
-      #
-      track_activity @task
       
       redirect_to task_path(@task.id), :notice => "The category has been successfully added to this task."
     end
@@ -62,10 +58,6 @@ class TasksController < ApplicationController
       
       Pony.mail(:to => @user.email, :from => 'rpjktest.email@gmail.com', :subject => 'hi ' + @user.name, :body => 'Hello there ' + @user.name + ' your task is ' + @task.name, :via => :smtp, :via_options => {:address => 'smtp.gmail.com',
       :port => '587', :authentication => :plain, :user_name => 'rpjktest.email@gmail.com', :password => 'Testpassword'})
-      #
-      # Tracking task activity when user assigned to task action => update
-      #    
-      track_activity @task
       
       redirect_to task_path(@task.id), :notice => "The task has been assigned."
     end
@@ -77,7 +69,6 @@ class TasksController < ApplicationController
     @comment = Comment.new(comment_text: params[:comment][:comment_text], user_id: current_user.id, task_id: @task.id)
     
     if @comment.save
-      track_activity @comment
       
       redirect_to task_path(@task.id), :notice => "New comment saved! Way to go."
     else
@@ -98,8 +89,13 @@ class TasksController < ApplicationController
   end
   
   def destroy
-    @category = Task.find(params[:id])
-    @category.delete
+    @task = Task.find(params[:id])
+    
+    Activity.where(trackable_type: "Task", trackable_id: @task.id).each do |a|
+      a.delete
+    end
+    
+    @task.delete
     
     redirect_to tasks_path, :notice => "Your task has been deleted."
   end
