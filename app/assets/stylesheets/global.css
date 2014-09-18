@@ -103,14 +103,12 @@ header form {
 
 #main_image img {
   position: relative;
-  margin-top: -41px;
   width: 1000px;
   z-index: 20;
 }
 
 #main_image_2 img {
   position: relative;
-  margin-top: -41px;
   width: 1000px;
   z-index: 20;
 }
