@@ -43,9 +43,7 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_slug(params[:id])
   end
   
-  def destroy
-    binding.pry
-    
+  def destroy    
     @project_id = Project.find_by_slug(params[:id]).id
     @project = Project.find_by_slug(params[:id])
     Activity.where(trackable_type: "Project", trackable_id: @project_id).each do |a|
