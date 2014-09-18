@@ -1,12 +1,7 @@
+
 <div class="adding_tasks">
   
     <h1>Add a new task</h1>
-
-     <% @task.errors.full_messages.each do |msg| %>
-
-      <p><%= msg %></p>
-
-    <% end %>
 
     <%= form_for @task do |f| %>
 
@@ -19,83 +14,56 @@
     <% end %>
        
   </div>
- 
+  
 <div class="users_tasks">
-        
-    <h1>Show detail page for <%= @task.name %></h1>
-
-    <p>Task name: <%= @task.name %></p>
-
-    <% if @task.project == nil %>
+  <% @tasks.each do |t| %>
   
-          <p>Not assigned to a project</p>
-  
-        <% else %>
-
-          <p>Assigned to Project: <%= @task.project.name %></p>
-  
-        <% end %>
-
-        <% if @task.users == [] %>
-
-          <p>Not assigned to a user</p>
-  
-        <% else %>
-
-          <p>Assigned to: <% @task.users.each do |u| %>
-                   <%= u.name %></p>
-                 <% end %>
-  
-        <% end %>
-
-        <p>Deadline: <%= @task.deadline %></p>
-
-        <p><%= @task.completed.capitalize %></p>
-
-        <% @task.categories.each do |cat| %>
-
-            <p><%= link_to(cat.name, category_path(cat.id)) %></p>
+  <tr>
+	<td><%= t.order %></td>
+    <td align="center"><%= link_to(t.name, task_path(t.id)) %></td>
+    <td><%= t.deadline %></td>
+    <td><%= t.completed.capitalize %></td>
 	
-           <% end %>
-     
-            </div>
-             
- 
-             
- 
- 
-             
- 
-            <div class="activity_feed">
- 
-              <h4>Activity Feed</h4><hr>
-              <div class="panel">
-                <h5><a href="#">Post Title 1</a></h5>
- 
-                <h6 class="subheader">
-                  Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Suspendisse ultrices ornare tempor...
-                </h6>
- 
-                <h6><a href="#">Read More »</a></h6>
-              </div>
- 
-              <div class="panel hide-for-small">
-                <h5><a href="#">Post Title 2 »</a></h5>
-              </div>
- 
-              <div class="panel hide-for-small">
-                <h5><a href="#">Post Title 3 »</a></h5>
-              </div>
- 
-              <a href="#" class="right">Go To Blog »</a>
- 
-            </div>
- 
-             
- 
-          </div>
-        </div>
-      </div>
+	<% if t.project %>
+	
+    	<td><%= link_to(t.project.name, project_path(t.project.id)) %></td>
+	<% else %>
+  
+      <td>&nbsp;</td>
+  	
+	<% end %>
+  
+	<% if t.users != [] %>
+	
+    <td><% t.users.each do |u| %>
+              <%= link_to(u.name, user_path(u.id)) %>
+           <% end %></td>
 
+	<% else %>
+  
+      <td>&nbsp;</td>
+  	
+	<% end %>
+	
+    <td><%= link_to("Edit", edit_task_path(t.id)) %></td>
+    <td><%= link_to("Delete", task_path(t.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + t.name + '?' })%>
+		
+  </tr>
+  <% end %>
+     
+</div>
+
+
+<div class="activity_feed">
+ 
+    <% @activities.each do |activity| %>
+                  <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
+
+	
+<% end %>
+             
+ 
+</div>
+       
  
     

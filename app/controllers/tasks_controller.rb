@@ -18,7 +18,7 @@ class TasksController < ApplicationController
     if @task.save
       track_activity @task
       
-      redirect_to task_path(@task.id), :notice => "New task saved! Way to go."
+      redirect_to dashboard_path(@task.id), :notice => "New task saved! Way to go."
     else
       render "new"
     end
