@@ -32,7 +32,7 @@ a {
 	margin: 0 auto;
 	font-family: sans-serif;
 	height: 715px;
-  z-index: 2;
+ 	z-index: 2;
 }
 
 #auto_height {
@@ -40,9 +40,9 @@ a {
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
-  z-index: 1;
-  position: absolute;
-  min-height: 100%;
+  	z-index: 1;
+  	position: absolute;
+  	min-height: 100%;
 }
 
 header {
