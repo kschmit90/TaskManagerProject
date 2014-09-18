@@ -54,7 +54,17 @@ a {
    text-decoration: none;
 }
 
+#content {
+  clear: both;
+	background: #2A79C7;
+	width: 1000px;
+	margin: 0 auto;
+	font-family: sans-serif;
+	height: 680px;;
+}
+
 #auto_height {
+  position: absolute;
 	background: #2A79C7;
 	width: 1000px;
 	margin: 0 auto;
@@ -69,7 +79,7 @@ a {
 	width: 1000px;
 	margin: 0 auto;
 	font-family: sans-serif;
-	height: 680px;
+	height: auto;
   z-index: 2;
 }
 
@@ -119,14 +129,16 @@ header form {
 
 #main_image img {
   position: relative;
-  float: left;
+  margin-top: -41px;
   width: 1000px;
+  z-index: 20;
 }
 
 #main_image_2 img {
   position: relative;
-  float: left;
+  margin-top: -41px;
   width: 1000px;
+  z-index: 20;
 }
 
 #welcome {
@@ -147,7 +159,7 @@ img {
 }
 
 #footer {
-/*  position: relative;*/
+  position: relative;
 /*  float: right;*/
   margin: 0 auto;
   height: 80px;
@@ -157,6 +169,7 @@ img {
 	background-color:#05D6FF;;
 	border-color: #e7e7e7;
   bottom: 0;
+  z-index: 20;
 }
 
 #footer ul li {
