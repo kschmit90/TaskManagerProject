@@ -22,21 +22,26 @@
 <body>
 	<div id="container">
 		<header>
-			<div id="header_content">
+			<div id="header_content">				
   			<p><a href="/">TaskManager</a></p>
 			</div>
+			<% if current_user %>
+				<span>Logged in as: <%= current_user.email %></span>
+			<% end %>
+			
 			  <nav>
 
           <% if current_user %> 
     				<ul>
-    					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
-    					<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/projects/{#@user}/show">Projects</a></li>
+    					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/dashboard">Home</a></li>
+    					<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/projects">Projects</a></li>
+						<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/tasks">Tasks</a></li>
           
             <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/logout.svg"><a href="/logout">Logout</a></li>
             </ul>
           <% else %>
           <ul>
-            <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/login">Login</a></li>
+            <li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/">Login</a></li>
   					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
   					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
           </ul>
@@ -64,16 +69,17 @@
         <% end %>
       
   		 	<%= yield %>
-        <div id="footer" style="margin-top: 0px; top: 529px;">
-          <ul>
-            <li><a href="/projects">View all projects</a></li>
-            <li><a href="/tasks">View all tasks</a></li>
-      			<li><a href="/">TaskManager</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li> 2014 </li>
-          </ul>
-        </div>
       </div>
+      <!-- </div> -->
+    </div>
+    <div id="footer" style="margin-top: 0px; top: 529px;">
+      <ul>
+        <li><a href="/projects">View all projects</a></li>
+        <li><a href="/tasks">View all tasks</a></li>
+  			<li><a href="/">TaskManager</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li> 2014 </li>
+      </ul>
     </div>
   </div>
 </body>
