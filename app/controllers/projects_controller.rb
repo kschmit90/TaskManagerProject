@@ -15,6 +15,8 @@ class ProjectsController < ApplicationController
     
     if @project.save
       @project.create_slug(@project)
+      track_activity @project
+      
       redirect_to project_path(@project), :notice => "New project saved! Way to go."
     else
       render "new"
@@ -29,6 +31,8 @@ class ProjectsController < ApplicationController
     @project = Project.find_by_slug(params[:id])
     
     if @project.update_attributes(params[:project])
+      track_activity @project
+      
       redirect_to project_path(@project), :notice => "Project updated! Way to go."
     else
       render "edit"
@@ -41,6 +45,8 @@ class ProjectsController < ApplicationController
   
   def destroy
     Project.find_by_slug(params[:id]).delete
+    track_activity @project
+    
     redirect_to projects_path, :notice => "Your project has been deleted."
   end
   

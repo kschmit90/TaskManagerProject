@@ -17,6 +17,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:category])
     
     if @category.save
+      track_activity @category
       redirect_to category_path(@category.id)
     else
       render 'new'
@@ -33,6 +34,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     
     if @category.update_attributes(params[:category])
+      track_activity @category
       redirect_to category_path(@category.id)
     else
       render 'edit'
@@ -43,6 +45,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     
     @category.delete
+    track_activity @category
     redirect_to categories_path
   end
   
