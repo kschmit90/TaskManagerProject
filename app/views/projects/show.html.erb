@@ -1,5 +1,6 @@
 <h1>Detail page for <%= @project.name %></h1>
 
+
 <p><%= @project.completed.capitalize %></p>
 
 <p><%= @project.deadline %></p>
@@ -13,6 +14,9 @@
       <p><%= link_to(t.name, task_path(t.id))%></p>
 	  
     <% end %>
+
+  <p>You have no projects</p>
+
 
 <p><%= link_to("Edit project", edit_project_path(@project)) %></p>
 <p><%= link_to("All projects", projects_path)%></p>
