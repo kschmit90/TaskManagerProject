@@ -44,7 +44,6 @@ class UsersController < ApplicationController
   def destroy
      @user = User.find(params[:id])
      @user.destroy
-     track_activity @user
      
 
      redirect_to users_path

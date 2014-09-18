@@ -100,7 +100,6 @@ class TasksController < ApplicationController
   def destroy
     @category = Task.find(params[:id])
     @category.delete
-    track_activity @task
     
     redirect_to tasks_path, :notice => "Your task has been deleted."
   end

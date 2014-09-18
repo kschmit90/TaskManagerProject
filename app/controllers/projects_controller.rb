@@ -45,7 +45,6 @@ class ProjectsController < ApplicationController
   
   def destroy
     Project.find_by_slug(params[:id]).delete
-    track_activity @project
     
     redirect_to projects_path, :notice => "Your project has been deleted."
   end
