@@ -54,15 +54,6 @@ a {
    text-decoration: none;
 }
 
-#container {
-	background: #2A79C7;
-	width: 1000px;
-	margin: 0 auto;
-	font-family: sans-serif;
-	height: 715px;
-  z-index: 2;
-}
-
 #auto_height {
 	background: #2A79C7;
 	width: 1000px;
@@ -70,7 +61,16 @@ a {
 	font-family: sans-serif;
   z-index: 1;
   position: absolute;
-  min-height: 100%;
+  height: auto;
+}
+
+#container {
+	background: #2A79C7;
+	width: 1000px;
+	margin: 0 auto;
+	font-family: sans-serif;
+	height: 680px;
+  z-index: 2;
 }
 
 header {
@@ -148,10 +148,11 @@ img {
 
 #footer {
 /*  position: relative;*/
-  float: right;
+/*  float: right;*/
+  margin: 0 auto;
   height: 80px;
   width: 1000px;
-	margin-top: 500px;
+/*  margin-top: 500px;*/
 	text-align: center;
 	background-color:#05D6FF;;
 	border-color: #e7e7e7;
