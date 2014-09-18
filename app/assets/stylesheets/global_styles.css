@@ -69,56 +69,30 @@ header form {
 }
 
 #main_image img {
-/*  position: relative;*/
-  width: 1000px;
-  z-index: 20;
 }
 
 #main_image_2 img {
-/*  position: relative;*/
-  width: 1000px;
-  z-index: 20;
 }
 
 #welcome {
-/*  position: relative;*/
-  float: left;
-  width: 500px;
 }
 
 #welcome_2 {
-/*  position: relative;*/
-  float: left;
-  width: 500px;
 }
 
 img {
-	width:50px;
-	height: auto;
 }
 
 #footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-/*  clear: both;
-  margin: 0 auto;*/
-  height: 80px;
-  width: 1000px;
 	text-align: center;
 	background-color:#05D6FF;;
 	border-color: #e7e7e7;
-  z-index: 20;
 }
 
 #footer ul {
-  height: 80px;
 }
 
 #footer ul li {
-	display: inline-block;
-	list-style-type: none;
-	margin-top: 5px;
 	font-family: 'Amatic SC', cursive;  
 	color: white;
 }
@@ -126,25 +100,18 @@ img {
 h1 {
 	font-family: 'Amatic SC', cursive;
 	color: white;
-	margin-top: 20px;
-	margin-bottom: 10px;
-	margin-left: 10px;
 }
 
 h6 {
 	font-family: 'Amatic SC', cursive;
 	font-size: 30px;
 	color: black;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	margin-left: 10px;
 }
 
 .field {
 	font-family: 'Amatic SC', cursive;
 	font-size: 20px;
 	color: black;
-	margin-left: 10px;
 }
 
 p {
@@ -154,19 +121,10 @@ p {
 }
 
 #adding_tasks {
-	position: relative;
-	float: left;
-	width: 250px;
 }
 
 #users_tasks {
-	position: relative;
-	float: left;
-	width: 500px;
 }
 
 #activity_feed {
-	position: relative;
-	float: left;
-	width: 250px;
 }
