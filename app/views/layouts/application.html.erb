@@ -56,23 +56,9 @@
           	<% end %>
 			
 		</div>
-	
-		<% if current_user %>
-		
-      		<div id="main_image_2">
-        		<img src="/task_manager1000.jpg" width="1000" height="370" alt="Let's Get Organized!">
-      	 	</div>
-			
-      	<% else %>
-		
-      		<div id="main_image">
-        		<img src="/task_managerc1000.jpg" width="1000" height="370" alt="Let's Get Organzied!">
-      	  	</div>
-			
-      	<% end %>
 		
 	  </nav>
-	  
+	 
 	<div id="content">
 		
     <% flash.each do |name, msg| -%>
@@ -89,19 +75,13 @@
       
   		 	<%= yield %>
         
-      </div>
-      <!-- </div> -->
-    </div>
-    <div id="footer" style="margin-top: 0px; top: 529px;">
-      <ul>
-        <li><a href="/projects">View all projects</a></li>
-        <li><a href="/tasks">View all tasks</a></li>
-  			<li><a href="/dashboard">TaskManager</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li> 2014 </li>
-      </ul>
-
-    </div>
+     </div>
+      
+	<footer>
+		<div id="footer_content">
+			<p>Made by: Ryan, Paul, Jen and Kyle - 2014</p>
+		</div>
+	</footer>
 	
   </div>
 </body>
