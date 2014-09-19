@@ -9,7 +9,7 @@ class Task < ActiveRecord::Base
   scope :is_not_complete, where(:complete => false)
   
   validate :deadline_is_date?
-  validate :name, presence: true
+  validate :name, :order, presence: true
   
   belongs_to :project
   
@@ -32,5 +32,4 @@ class Task < ActiveRecord::Base
       errors.add(:deadline, 'must be a valid date') 
     end
   end
-  
 end

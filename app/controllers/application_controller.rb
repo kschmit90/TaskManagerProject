@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
   def track_activity(trackable, action = params[:action])
     current_user.activities.create! action: action, trackable: trackable
   end
+  
+  
 
   helper_method :current_user
 end
