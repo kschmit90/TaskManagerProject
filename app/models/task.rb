@@ -32,5 +32,4 @@ class Task < ActiveRecord::Base
       errors.add(:deadline, 'must be a valid date') 
     end
   end
-  
 end

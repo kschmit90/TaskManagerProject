@@ -6,18 +6,7 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
     
-    task_order_count = []
-    
-    @tasks.each do |t|
-      if t.order
-        task_order_count << t
-      end
-      task_order_count
-    end
-    
-    if task_order_count.length >= 2
-      @tasks.sort! { |a,b| a.order <=> b.order } 
-    end
+    @tasks.sort! { |a,b| a.order <=> b.order } 
   end
   
   def new
