@@ -105,3 +105,12 @@ footer p {
 	text-align: center;
 	padding-top: 30px;
 }
+
+.errors p{
+	color: white;
+}
+
+.errors {
+	border-style: solid;
+	border-color: red;
+}

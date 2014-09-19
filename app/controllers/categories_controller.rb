@@ -17,7 +17,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:category])
     
     if @category.save
-      redirect_to category_path(@category.id)
+      redirect_to category_path(@category.id), :notice => "Category has been created."
     else
       render 'new'
     end
@@ -33,7 +33,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     
     if @category.update_attributes(params[:category])
-      redirect_to category_path(@category.id)
+      redirect_to category_path(@category.id), :notice => "Category has been updated."
     else
       render 'edit'
     end
@@ -42,7 +42,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     
-    redirect_to categories_path
+    redirect_to dashboard_path, :notice => "Category has been deleted"
   end
   
 end

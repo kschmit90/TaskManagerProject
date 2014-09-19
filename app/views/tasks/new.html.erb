@@ -1,10 +1,10 @@
 <h1>Add a new task</h1>
 
-<% @task.errors.full_messages.each do |msg| %>
+<div class="errors"><% @task.errors.full_messages.each do |msg| %>
 
   <p><%= msg %></p>
   
-<% end %>
+<% end %></div>
 
 <%= form_for @task do |f| %>
 
