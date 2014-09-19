@@ -2,7 +2,15 @@ require 'pony'
 
 class TasksController < ApplicationController
   skip_before_filter :authorize, :only => [:index, :show]
-
+  
+  @@task_new = "You have a new saved task! Click the edit link to assign it to a user."
+  @@task_alert = "Oops! Something went wrong! Please try again."
+  @@add_category = "The category has been successfully added to this task."
+  @@comment = "New comment saved! Way to go."
+  @@comment_a = "You must be logged in to do leave a comment."
+  @@task_u = "Task updated! Way to go."
+  @@task_d = "Your task has been deleted."
+  
   def index
     @tasks = Task.all
     @tasks.sort! { |a, b| a.order <=> b.order }
@@ -18,9 +26,9 @@ class TasksController < ApplicationController
     if @task.save
       track_activity @task
 
-      redirect_to dashboard_path(@task.id), :notice => "You have a new saved task! Click the edit link to assign it to a user."
+      redirect_to dashboard_path(@task.id), :notice => @@task_new
     else
-      flash[:alert] = "Oops! Something went wrong! Please try again."
+      flash[:alert] = @@task_alert
       render "new"
     end
   end
@@ -44,7 +52,7 @@ class TasksController < ApplicationController
     else
       @task.categories << @category
 
-      redirect_to task_path(@task.id), :notice => "The category has been successfully added to this task."
+      redirect_to task_path(@task.id), :notice => @@add_category
     end
   end
 
@@ -71,9 +79,9 @@ class TasksController < ApplicationController
 
     if @comment.save
 
-      redirect_to task_path(@task.id), :notice => "New comment saved! Way to go."
+      redirect_to task_path(@task.id), :notice => @@comment
     else
-      render "login", :alert => "You must be logged in to do leave a comment."
+      render "login", :alert => @@comment_a
     end
   end
 
@@ -83,7 +91,7 @@ class TasksController < ApplicationController
     if @task.update_attributes(params[:task])
       track_activity @task
 
-      redirect_to task_path(@task.id), :notice => "Task updated! Way to go."
+      redirect_to task_path(@task.id), :notice => @@task_u
     else
       render "edit"
     end
@@ -94,7 +102,7 @@ class TasksController < ApplicationController
     delete_tracked_tasks
     @task.delete
 
-    redirect_to dashboard_path, :notice => "Your task has been deleted."
+    redirect_to dashboard_path, :notice => @@task_d
   end
 
   def show

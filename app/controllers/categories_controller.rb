@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
   skip_before_filter :authorize
+  @@cat_create = "Category has been created."
+  @@cat_update = "Category has been updated."
+  @@cat_destroy = "Category has been deleted."
 
   def index
     @categories = Category.all
@@ -17,7 +20,7 @@ class CategoriesController < ApplicationController
     @category = Category.new(params[:category])
 
     if @category.save
-      redirect_to category_path(@category.id), :notice => "Category has been created."
+      redirect_to category_path(@category.id), :notice => @@cat_create
     else
       render 'new'
     end
@@ -33,7 +36,7 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
 
     if @category.update_attributes(params[:category])
-      redirect_to category_path(@category.id), :notice => "Category has been updated."
+      redirect_to category_path(@category.id), :notice => @@cat_update
     else
       render 'edit'
     end
@@ -42,6 +45,6 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
 
-    redirect_to dashboard_path, :notice => "Category has been deleted"
+    redirect_to dashboard_path, :notice => @@cat_destroy
   end
 end
