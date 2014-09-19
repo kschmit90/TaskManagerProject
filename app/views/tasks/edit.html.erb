@@ -1,38 +1,28 @@
 <h1>Edit page for <%= @task.name %></h1>
 
-<div class="errors"><% @task.errors.full_messages.each do |msg| %>
-
-  <p><%= msg %></p>
-  
-<% end %></div>
+<div class="errors">
+  <% @task.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+</div>
 
 <%= form_for @task do |f| %>
-  <p>Task name: <%= f.text_field :name %></p>
-  
-  <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline%></p>
-  
-  <p>Complete? <%= f.check_box :complete%></p>
-  
+  <p>Task name: <%= f.text_field :name %></p>  
+  <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline%></p>  
+  <p>Complete? <%= f.check_box :complete%></p>  
   <p>Project: <%= f.collection_select(:project_id, @projects, :id, :name )%></p>
-  
   <p>Order: <%= f.text_field(:order) %>
-    
   <p><%= f.submit %></p>
-
 <% end %>
 
 </br>
 
 <%= form_for(@task, :url => add_category_path, :method => "post", :action => "update") do |f| %>
-
   <p>Category: <%= f.collection_select(:categories, @categories, :id, :name )%><%= f.submit "Add category" %></p>
-  
 <% end %>
 
 <%= form_for(@task, :url => add_user_path, :method => "post") do |f| %>
-
   <p>Assigned to: <%= f.collection_select(:users, @users, :id, :email )%><%= f.submit "Assign" %></p>
-
 <% end %>
 
 <p>Would you like to delete "<%= @task.name %>" from your profile? This action can not be undone: <%= button_to "Delete", {action: "destroy", id: @task.id }, method: :delete, data: { confirm: "Are you sure?" }%>
