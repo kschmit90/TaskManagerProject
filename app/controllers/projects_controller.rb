@@ -40,7 +40,6 @@ class ProjectsController < ApplicationController
   end
   
   def show
-    binding.pry
     @project = Project.find_by_slug(params[:id])
   end
   
