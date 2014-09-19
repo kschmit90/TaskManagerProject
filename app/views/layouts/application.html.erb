@@ -60,19 +60,13 @@
 	  </nav>
 	 
 	<div id="content">
-		
-    <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg , class: flash %>
-        <% end -%>
-    	<!-- <% if flash[:notice] %>
-            <p id="notice"><%= flash[:notice] %></p>
-        <% end %>
+	
+		<div id="flash">	
+    		<% flash.each do |name, msg| -%>
+          		<%= content_tag :div, msg , class: flash %>
+ 			<% end %>
+		</div>
 
-        <% if flash[:alert] %>
-           <p id="alert"><%= flash[:alert] %></p>
-        <% end %> -->
-
-      
   		 	<%= yield %>
         
      </div>
