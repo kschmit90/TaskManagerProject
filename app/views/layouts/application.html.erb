@@ -75,7 +75,9 @@
 			<p><%= link_to("Projects", projects_path)%></p>
 			<p><%= link_to("Categories", categories_path)%></p>
 			<p><%= link_to("Tasks", tasks_path)%></p>
+			<% if current_user %>
 			<p><%= link_to("User", user_path(current_user.id))%></p>
+			<% end %>
 			
 		</div>
 
