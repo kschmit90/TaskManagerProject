@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  skip_before_filter :authorize
 
   def index
     @projects = Project.all

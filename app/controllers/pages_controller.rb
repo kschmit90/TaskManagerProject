@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_filter :authorize
+  skip_before_filter :authorize, :only => [:home, :update]
 
   def home
     @user = User.new
