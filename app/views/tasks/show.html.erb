@@ -4,25 +4,18 @@
   <p>Task name: <%= @task.name %></p>
 
   <% if @task.project == nil %>
-  
     <p>Not assigned to a project</p>
-  
   <% else %>
-
     <p>Assigned to Project: <%= @task.project.name %></p>
-  
   <% end %>
 
   <% if @task.users == [] %>
-
     <p>Not assigned to a user</p>
-  
   <% else %>
-
-    <p>Assigned to: <% @task.users.each do |u| %>
-             <%= u.name %></p>
-           <% end %>
-  
+    <p>Assigned to: 
+      <% @task.users.each do |u| %>
+        <%= u.name %></p>
+      <% end %>
   <% end %>
 
   <p>Deadline: <%= @task.deadline %></p>
