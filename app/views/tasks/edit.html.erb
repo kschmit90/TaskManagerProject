@@ -36,5 +36,3 @@
 <% end %>
 
 <p>Would you like to delete "<%= @task.name %>" from your profile? This action can not be undone: <%= button_to "Delete", {action: "destroy", id: @task.id }, method: :delete, data: { confirm: "Are you sure?" }%>
-
-<p><%= link_to('Home', root_path) %></p>
