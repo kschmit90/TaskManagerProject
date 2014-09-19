@@ -14,22 +14,21 @@
 
     	<div class="field">
     		<%= label_tag :email %><br />
-        	<%= text_field_tag :email, params[:email] %>
-      	</div>
+        <%= text_field_tag :email, params[:email] %>
+      </div>
 
-      	<div class="field">
-        	<%= label_tag :password %><br />
-        	<%= password_field_tag :password %>
-      	</div>
-
+      <div class="field">
+        <%= label_tag :password %><br />
+        <%= password_field_tag :password %>
+      </div>
+      
+      <div class="field">
       	<%= submit_tag "Log In" %>
       </div>
     
     <% end %>
   
 <div id="welcome_2">
-  <h6></h6>
-  <h6></h6>
   <h6>Or create a new account...</h6>
   
   <%= button_to "New User", {action: "new", :controller=>"users"}, method: :get   %>
