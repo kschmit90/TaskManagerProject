@@ -1,19 +1,14 @@
 <h1>Add a new task</h1>
 
-<div class="errors"><% @task.errors.full_messages.each do |msg| %>
-
-  <p><%= msg %></p>
-  
-<% end %></div>
+<div class="errors">
+  <% @task.errors.full_messages.each do |msg| %>
+    <p><%= msg %></p>
+  <% end %>
+</div>
 
 <%= form_for @task do |f| %>
-
-  <p>Task name: <%= f.text_field :name %></p>
-  
+  <p>Task name: <%= f.text_field :name %></p>  
   <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline %></p>
-  
-  <p>Order/Priority(num): <%= f.text_field :order %>
-  
+  <p>Order/Priority(num): <%= f.text_field :order %></p>
   <%= f.submit %>
-  
 <% end %>
