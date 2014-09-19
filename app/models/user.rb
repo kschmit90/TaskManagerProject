@@ -9,4 +9,23 @@ class User < ActiveRecord::Base
   validates :email, :password, :password_confirmation, :name, presence: true
 
   has_secure_password
+  
+  def send_task_email(task)
+    Pony.mail({
+      :to => email,
+      :from => 'rpjktest.email@gmail.com',
+      :subject => 'hi ' + name,
+      :body => 'Hello there ' + name + ' your task is ' + task.name,
+      :via => :smtp,
+      :via_options => {
+        :address => 'smtp.gmail.com',
+        :port => '587',
+        :authentication => :plain,
+        :user_name => 'rpjktest.email@gmail.com',
+        :password => 'Testpassword'
+      }
+    })
+  
+  end
+  
 end

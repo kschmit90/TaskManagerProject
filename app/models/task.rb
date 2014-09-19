@@ -17,11 +17,7 @@ class Task < ActiveRecord::Base
   #
   # Returns a user-friendly string describing whether the task is stored as complete or not
   def completed
-    if complete == true
-      "complete"
-    else
-      "not complete"
-    end
+    complete? ? "complete" : "not complete"
   end
 
   # Validates that the user's input for deadline is a valid date

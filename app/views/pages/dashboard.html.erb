@@ -33,9 +33,10 @@
   
   
         <% if t.users != [] %>
-            <td><% t.users.each do |u| %>
+            <td>
+              <% t.users.each do |u| %>
                 <p><%= link_to(u.name, user_path(u.id)) %></p>
-            <% end %>
+              <% end %>
             </td>
         <% else %>
             <td>&nbsp;</td>

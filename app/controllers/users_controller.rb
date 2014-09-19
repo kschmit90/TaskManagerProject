@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    delete_tracked_users
+    Activity.delete_tracked_users(@user.id)
     reset_session
 
     redirect_to root_path, :notice => @@delete_notice

@@ -12,7 +12,8 @@
   <% if @task.users == [] %>
     <p>Not assigned to a user</p>
   <% else %>
-    <p>Assigned to: 
+    <p>
+      Assigned to: 
       <% @task.users.each do |u| %>
         <%= u.name %></p>
       <% end %>
