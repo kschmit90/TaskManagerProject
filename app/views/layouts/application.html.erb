@@ -70,6 +70,14 @@
           		<%= content_tag :div, msg , class: flash %>
  			<% end %>
 		</div>
+		
+		<div id="nav_bar">
+			<p><%= link_to("Projects", projects_path)%></p>
+			<p><%= link_to("Categories", categories_path)%></p>
+			<p><%= link_to("Tasks", tasks_path)%></p>
+			<p><%= link_to("User", user_path(current_user.id))%></p>
+			
+		</div>
 
   		 	<%= yield %>
         
