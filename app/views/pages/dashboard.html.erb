@@ -1,60 +1,55 @@
-
 <div class="adding_tasks">
   
     <h1>Add a new task</h1>
 
-    <%= form_for @task do |f| %>
+        <%= form_for @task do |f| %>
 
-      <p>Task name: <%= f.text_field :name %></p>
+          <p>Task name: <%= f.text_field :name %></p>
+          <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline%></p>
   
-      <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline%></p>
+          <%= f.submit %>
   
-      <%= f.submit %>
-  
-    <% end %>
+        <% end %>
        
-  </div>
+</div>
   
 <div class="users_tasks">
   
   <h1>Current tasks</h1>
   
-  <% @tasks.each do |t| %>
-    <table>
-      <tr>
-    	  <td><%= t.order %></td>
-        <td><%= link_to(t.name, task_path(t.id)) %></td>
-        <td><%= t.deadline %></td>
-        <td><%= t.completed.capitalize %></td>
+      <% @tasks.each do |t| %>
+        <table>
+          <tr>
+        	  <td><%= t.order %></td>
+            <td><%= link_to(t.name, task_path(t.id)) %></td>
+            <td><%= t.deadline %></td>
+            <td><%= t.completed.capitalize %></td>
 	
-      	<% if t.project %>
-	
-          	<td><%= link_to(t.project.name, project_path(t.project.slug)) %></td>
-      	<% else %>
-  
+        <% if t.project %>
+            <td><%= link_to(t.project.name, project_path(t.project.slug)) %></td>
+        <% else %>
             <td>&nbsp;</td>
-  	
-      	<% end %>
+        <% end %>
   
-      	<% if t.users != [] %>
-	
-          <td><% t.users.each do |u| %>
-              <p><%= link_to(u.name, user_path(u.id)) %></p>
-          <% end %></td>
-
-      	<% else %>
   
-          <td>&nbsp;</td>
-  	
-      	<% end %>
+        <% if t.users != [] %>
+            <td><% t.users.each do |u| %>
+                <p><%= link_to(u.name, user_path(u.id)) %></p>
+            <% end %>
+            </td>
+        <% else %>
+            <td>&nbsp;</td>
+        <% end %>
 	
-        <td><%= link_to("Edit", edit_task_path(t.id)) %></td>
-        <td><%= link_to("Delete", task_path(t.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + t.name + '?' })%>
+            <td><%= link_to("Edit", edit_task_path(t.id)) %></td>
+            <td><%= link_to("Delete", task_path(t.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + t.name + '?' })%>
 		
-      </tr>
-    </table>
-  <% end %>
-     <%= button_to "update", {action: "update", id: @task.id } %>
+          </tr>
+        </table>
+    <% end %>
+     
+    <%= button_to "update", {action: "update", id: @task.id } %>
+
 </div>
 
 
@@ -62,7 +57,7 @@
  
  <h1>Recent activity</h1>
     <% @activities.each do |activity| %>
-    <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
+        <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
     <% end %>
 
 </div>
