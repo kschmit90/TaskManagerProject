@@ -10,13 +10,15 @@ class ApplicationController < ActionController::Base
 
   def authorize
     if current_user.nil?
-      redirect_to login_path
+      redirect_to root_path
     end
   end
   
   def track_activity(trackable, action = params[:action])
     current_user.activities.create! action: action, trackable: trackable
   end
+  
+  
 
   helper_method :current_user
 end

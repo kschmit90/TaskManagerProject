@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize
-  
+  skip_before_filter :authorize, :only => [:new, :create, :edit]
+    
   def new
     @user = User.new
   end
@@ -43,6 +43,6 @@ class UsersController < ApplicationController
      @user.destroy
      
 
-     redirect_to users_path
+     redirect_to dashboard_path, :notice => "User has been deleted"
    end
 end

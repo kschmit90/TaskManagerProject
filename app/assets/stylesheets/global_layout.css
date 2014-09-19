@@ -17,6 +17,14 @@ h1 {
 	margin: 0;
 }
 
+#flash {
+	top: 7px;
+	position: relative;
+	left: 450px;
+	color: red;
+	font-family: verdana;
+}
+
 #container {
 	width: 1150px;
 	margin: 0 auto;
@@ -42,7 +50,10 @@ h1 {
 	color: #F00000;
 }
 
-#current_user_email {
+#welcome_message {
+	position: relative;
+	right: 45px;
+	top: 5px;
 	float: right;
 }
 
@@ -93,4 +104,13 @@ footer {
 footer p {
 	text-align: center;
 	padding-top: 30px;
+}
+
+.errors p{
+	color: white;
+}
+
+.errors {
+	border-style: solid;
+	border-color: red;
 }

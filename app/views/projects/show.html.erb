@@ -1,3 +1,4 @@
+<div id="project_show_page">
 <h1>Detail page for <%= @project.name %></h1>
 
 
@@ -15,10 +16,8 @@
 	  
     <% end %>
 
-  <p>You have no projects</p>
-
-
 <p><%= link_to("Edit project", edit_project_path(@project)) %></p>
 <p><%= link_to("All projects", projects_path)%></p>
 
 <p><%= link_to('Home', root_path) %></p>
+</div>

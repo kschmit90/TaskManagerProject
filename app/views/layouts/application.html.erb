@@ -19,7 +19,11 @@
 	  <nav>
 		  
 		<div id="nav_content">
-  			<p><a href="/">TaskManager</a></p>
+			<% if current_user %>
+  				<p><a href="/dashboard">TaskManager</a></p>
+			<% else %>
+  				<p><a href="/">TaskManager</a></p>
+			<% end %>
 		</div>
 		
 		<% if current_user %>	
@@ -60,19 +64,13 @@
 	  </nav>
 	 
 	<div id="content">
-		
-    <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg , class: flash %>
-        <% end -%>
-    	<!-- <% if flash[:notice] %>
-            <p id="notice"><%= flash[:notice] %></p>
-        <% end %>
+	
+		<div id="flash">	
+    		<% flash.each do |name, msg| -%>
+          		<%= content_tag :div, msg , class: flash %>
+ 			<% end %>
+		</div>
 
-        <% if flash[:alert] %>
-           <p id="alert"><%= flash[:alert] %></p>
-        <% end %> -->
-
-      
   		 	<%= yield %>
         
      </div>
