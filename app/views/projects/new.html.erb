@@ -1,22 +1,18 @@
 <div id="new_project_page">
-<h1>Add a new project</h1>
+  
+  <h1>Add a new project</h1>
 
-<div class="errors"><% @project.errors.full_messages.each do |msg| %>
+  <div class="errors">
+    <% @project.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
 
-  <p><%= msg %></p>
-  
-<% end %></div>
-
-<%= form_for @project do |f| %>
-  
-  <p>Project name: <%= f.text_field :name %></p>
-  
-  <p>Description <%= f.text_field :description %></p>
-  
-  <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline %></p>
-  
-  <%= f.submit %>
-  
-<% end %>
+  <%= form_for @project do |f| %>
+    <p>Project name: <%= f.text_field :name %></p>
+    <p>Description <%= f.text_field :description %></p>
+    <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline %></p>
+    <%= f.submit %>
+  <% end %>
 
 </div>
