@@ -41,3 +41,19 @@
   width: 60%;
 /*  border-top: 1px solid #05D6FF;*/
 }
+
+#tasks_index_page {
+	padding-left: 40px;
+}
+
+#tasks_index_page h1 {
+	padding-bottom: 20px;
+}
+
+#tasks_index_page td {
+	padding-left: 30px;
+}
+
+#tasks_index_links {
+	padding-top: 30px;
+}

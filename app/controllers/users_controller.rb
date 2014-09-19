@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize
-  
+  skip_before_filter :authorize, :only => [:new, :create, :edit]
+    
   def new
     @user = User.new
   end
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     
     if @user.save      
-      redirect_to user_path(@user.id)
+      redirect_to dashboard_path(@user.id)
     else
       render "new"
     end

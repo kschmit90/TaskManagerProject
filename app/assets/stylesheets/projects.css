@@ -2,3 +2,34 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
+
+#projects_page {
+	padding-left: 40px;
+}
+
+#projects_page h1 {
+	padding-bottom: 20px;
+}
+
+#projects_page td {
+	padding-left: 30px;
+}
+
+#projects_link_new {
+	padding-top: 20px;
+}
+
+#new_project_page {
+	padding-left: 40px;
+	padding-top: 20px;
+}
+
+#edit_project_page {
+	padding-left: 40px;
+	padding-top: 20px;
+}
+
+#project_show_page {
+	padding-left: 40px;
+	padding-top: 20px;
+}
