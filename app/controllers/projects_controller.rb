@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
     end
     Project.find_by_slug(params[:id]).delete
         
-    redirect_to projects_path, :notice => "Your project has been deleted."
+    redirect_to dashboard_path, :notice => "Your project has been deleted."
   end
   
 end

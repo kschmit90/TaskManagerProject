@@ -43,6 +43,6 @@ class UsersController < ApplicationController
      @user.destroy
      
 
-     redirect_to users_path
+     redirect_to dashboard_path, :notice => "User has been deleted"
    end
 end

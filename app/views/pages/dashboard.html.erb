@@ -30,7 +30,7 @@
 	
       	<% if t.project %>
 	
-          	<td><%= link_to(t.project.name, project_path(t.project.id)) %></td>
+          	<td><%= link_to(t.project.name, project_path(t.project.slug)) %></td>
       	<% else %>
   
             <td>&nbsp;</td>
