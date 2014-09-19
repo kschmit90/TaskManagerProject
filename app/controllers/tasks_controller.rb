@@ -18,8 +18,9 @@ class TasksController < ApplicationController
     if @task.save
       track_activity @task
       
-      redirect_to dashboard_path(@task.id), :notice => "New task saved! Way to go."
+      redirect_to dashboard_path(@task.id), :notice => "You have a new saved task! Click the edit link to assign it to a user."
     else
+      flash[:alert] = "Oops! Something went wrong! Please try again."
       render "new"
     end
   end
@@ -59,7 +60,7 @@ class TasksController < ApplicationController
       Pony.mail(:to => @user.email, :from => 'rpjktest.email@gmail.com', :subject => 'hi ' + @user.name, :body => 'Hello there ' + @user.name + ' your task is ' + @task.name, :via => :smtp, :via_options => {:address => 'smtp.gmail.com',
       :port => '587', :authentication => :plain, :user_name => 'rpjktest.email@gmail.com', :password => 'Testpassword'})
       
-      redirect_to task_path(@task.id), :notice => "The task has been assigned."
+      redirect_to task_path(@task.id), :notice => "The task has been assigned to #{@user.name}."
     end
   end
   
