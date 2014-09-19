@@ -12,12 +12,14 @@ class LoginsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path
     else
-      render "new"
+      flash[:alert] = "Your username and/or password are not correct."
+      render "new" 
     end
   end
   
   def destroy
     session[:user_id] = nil # Could also call `reset_session` to clear the entire session.
+    flash[:notice] = "You have successfully Logged out!"
     redirect_to root_path
   end  
 end

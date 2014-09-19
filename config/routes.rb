@@ -1,7 +1,7 @@
 TaskManagerProject::Application.routes.draw do
   root :to => 'pages#home'
   
-
+  post "dashboard" => 'pages#update'
   get "dashboard" => 'pages#dashboard', :as => "dashboard"
   
   # Login/Logout Routes

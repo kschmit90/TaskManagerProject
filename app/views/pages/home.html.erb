@@ -1,5 +1,12 @@
 <div id="welcome">
   
+  <% @user.errors.full_messages.each do |msg| %>
+
+    <p><%= msg %></p>
+  
+  <% end %>
+  
+  
   <h1>Welcome, let's get started..!</h1>
   <h6>Already a user, log in below...</h6>
   
@@ -16,9 +23,9 @@
       	</div>
 
       	<%= submit_tag "Log In" %>
-    </div>
+      </div>
     
-        <% end %>
+    <% end %>
   
 <div id="welcome_2">
   <h6></h6>

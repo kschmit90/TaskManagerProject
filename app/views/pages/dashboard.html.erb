@@ -17,10 +17,13 @@
   
 <div class="users_tasks">
   
+  <h1>Current tasks</h1>
+  
   <% @tasks.each do |t| %>
     <table>
       <tr>
     	  <td><%= t.order %></td>
+        <td><%= check_box_tag 'task_ids[]', t.id, false -%></td>
         <td><%= link_to(t.name, task_path(t.id)) %></td>
         <td><%= t.deadline %></td>
         <td><%= t.completed.capitalize %></td>
@@ -52,12 +55,13 @@
       </tr>
     </table>
   <% end %>
-     
+     <%= button_to "update", {action: "update", id: @task.id } %>
 </div>
 
 
 <div class="activity_feed">
  
+ <h1>Recent activity</h1>
     <% @activities.each do |activity| %>
     <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
     <% end %>
