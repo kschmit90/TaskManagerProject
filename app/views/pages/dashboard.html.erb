@@ -23,7 +23,7 @@
     <table>
       <tr>
     	  <td><%= t.order %></td>
-        <td><%= check_box_tag 'task_ids[]', t.id, false %></td>
+        <td><%= check_box_tag 'task_ids[]', t.id, false -%></td>
         <td><%= link_to(t.name, task_path(t.id)) %></td>
         <td><%= t.deadline %></td>
         <td><%= t.completed.capitalize %></td>
@@ -55,7 +55,7 @@
       </tr>
     </table>
   <% end %>
-     <%= button_to "update", {action: "update", id: @task.id, class: "update_button"} %>
+     <%= button_to "update", {action: "update", id: @task.id } %>
 </div>
 
 
