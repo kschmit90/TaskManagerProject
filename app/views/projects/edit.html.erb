@@ -1,26 +1,25 @@
 <div id="edit_project_page">
-<h1>Edit <%= @project.name %></h1>
+  <h1>Edit <%= @project.name %></h1>
 
-<div class="errors"><% @project.errors.full_messages.each do |msg| %>
+  <div class="errors">
+    <% @project.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  </div>
 
-  <p><%= msg %></p>
+  <%= form_for @project do |f| %>
   
-<% end %></div>
+    <p>Project name: <%= f.text_field :name %></p>
+    <p>Description <%= f.text_field :description %></p>
+    <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline %></p>
+    <p>Complete? <%= f.check_box :complete%></p>
+    <%= f.submit %>
+  
+  <% end %>
 
-<%= form_for @project do |f| %>
-  
-  <p>Project name: <%= f.text_field :name %></p>
-  
-  <p>Description <%= f.text_field :description %></p>
-  
-  <p>Deadline (YYYY-MM-DD): <%= f.text_field :deadline %></p>
-  
-  <p>Complete? <%= f.check_box :complete%></p>
-  
-  <%= f.submit %>
-  
-<% end %>
-
-<p>Would you like to delete "<%= @project.name %>" from the application? This action can not be undone: <%= link_to 'Delete', project_path(@project), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + @project.name + '?' } %></p>
+  <p>
+    Would you like to delete "<%= @project.name %>" from the application? This action can not be undone:
+    <%= link_to 'Delete', project_path(@project), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + @project.name + '?' } %>
+  </p>
 
 </div>
