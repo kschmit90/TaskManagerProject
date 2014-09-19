@@ -12,7 +12,8 @@ class LoginsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_path
     else
-      render "home"
+      flash[:alert] = "Your username and/or password are not correct."
+      render "new" 
     end
   end
   
