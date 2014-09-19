@@ -19,7 +19,11 @@
 	  <nav>
 		  
 		<div id="nav_content">
-  			<p><a href="/">TaskManager</a></p>
+			<% if current_user %>
+  				<p><a href="/dashboard">TaskManager</a></p>
+			<% else %>
+  				<p><a href="/">TaskManager</a></p>
+			<% end %>
 		</div>
 		
 		<% if current_user %>	
