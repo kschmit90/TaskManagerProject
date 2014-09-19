@@ -18,48 +18,48 @@
 	<div id="container">
 	  <nav>
 		  
-		<div id="nav_content">
-			<% if current_user %>
-  				<p><a href="/dashboard">TaskManager</a></p>
-			<% else %>
-  				<p><a href="/">TaskManager</a></p>
-			<% end %>
-		</div>
+  		<div id="nav_content">
+  			<% if current_user %>
+    				<p><a href="/dashboard">TaskManager</a></p>
+  			<% else %>
+    				<p><a href="/">TaskManager</a></p>
+  			<% end %>
+  		</div>
 		
-		<% if current_user %>	
-			<div id="welcome_message">
+  		<% if current_user %>	
+  			<div id="welcome_message">
 			
-				<p>Welcome, <%= current_user.name %>!</p>
-			</div>
-		<% end %>
+  				<p>Welcome, <%= current_user.name %>!</p>
+  			</div>
+  		<% end %>
 
 
-		<div id="nav_links">
-        	<% if current_user %>
-    			<ul>
-    				<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/dashboard">Home</a></li>
+  		<div id="nav_links">
+          	<% if current_user %>
+      			<ul>
+      				<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/dashboard">Home</a></li>
 					
-    				<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/projects">Projects</a></li>
+      				<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/projects">Projects</a></li>
 					
-					<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/tasks">Tasks</a></li>
+  					<li><img src="http://imagebox.com/app/wp-content/uploads/2013/05/iconmonstr-clipboard-5-icon.png"><a href="/tasks">Tasks</a></li>
 					
-					<li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/logout.svg"><a href="/logout">Logout</a></li>
+  					<li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/logout.svg"><a href="/logout">Logout</a></li>
 					
-            	</ul>
-			<% else %>
+              	</ul>
+  			<% else %>
 			
-          		<ul>
-            		<li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/">Login</a></li>
+            		<ul>
+              		<li><img src="http://uxrepo.com/static/icon-sets/mfg-labs/svg/login.svg"><a href="/">Login</a></li>
 					
-  					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
+    					<li><img src="http://uxrepo.com/static/icon-sets/typicons/svg/home.svg"><a href="/">Home</a></li>
 					
-  					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
+    					<li><img src="http://freeiconbox.com/icon/256/16363.png"><a href="/users/new">Create User</a></li>
 					
-          	  	</ul>
+            	  	</ul>
 				
-          	<% end %>
+            	<% end %>
 			
-		</div>
+  		</div>
 		
 	  </nav>
 	 
