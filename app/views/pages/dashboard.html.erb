@@ -16,39 +16,41 @@
   </div>
   
 <div class="users_tasks">
+  
   <% @tasks.each do |t| %>
-  
-  <tr>
-	<td><%= t.order %></td>
-    <td align="center"><%= link_to(t.name, task_path(t.id)) %></td>
-    <td><%= t.deadline %></td>
-    <td><%= t.completed.capitalize %></td>
+    <table>
+      <tr>
+    	  <td><%= t.order %></td>
+        <td><%= link_to(t.name, task_path(t.id)) %></td>
+        <td><%= t.deadline %></td>
+        <td><%= t.completed.capitalize %></td>
 	
-	<% if t.project %>
+      	<% if t.project %>
 	
-    	<td><%= link_to(t.project.name, project_path(t.project.id)) %></td>
-	<% else %>
+          	<td><%= link_to(t.project.name, project_path(t.project.id)) %></td>
+      	<% else %>
   
-      <td>&nbsp;</td>
+            <td>&nbsp;</td>
   	
-	<% end %>
+      	<% end %>
   
-	<% if t.users != [] %>
+      	<% if t.users != [] %>
 	
-    <td><% t.users.each do |u| %>
-              <%= link_to(u.name, user_path(u.id)) %>
-           <% end %></td>
+          <td><% t.users.each do |u| %>
+              <p><%= link_to(u.name, user_path(u.id)) %></p>
+          <% end %></td>
 
-	<% else %>
+      	<% else %>
   
-      <td>&nbsp;</td>
+          <td>&nbsp;</td>
   	
-	<% end %>
+      	<% end %>
 	
-    <td><%= link_to("Edit", edit_task_path(t.id)) %></td>
-    <td><%= link_to("Delete", task_path(t.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + t.name + '?' })%>
+        <td><%= link_to("Edit", edit_task_path(t.id)) %></td>
+        <td><%= link_to("Delete", task_path(t.id), :method => :delete, data: {confirm: 'Are you sure you want to delete ' + t.name + '?' })%>
 		
-  </tr>
+      </tr>
+    </table>
   <% end %>
      
 </div>
@@ -57,12 +59,9 @@
 <div class="activity_feed">
  
     <% @activities.each do |activity| %>
-                  <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
+    <p><%= activity.user.name + ' ' + activity.action + 'd ' + activity.trackable_type + ' ' + activity.trackable.name %></p>
+    <% end %>
 
-	
-<% end %>
-             
- 
 </div>
        
  

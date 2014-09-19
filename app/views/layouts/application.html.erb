@@ -56,9 +56,9 @@
           	<% end %>
 			
 		</div>
-	
+		
 	  </nav>
-	  
+	 
 	<div id="content">
 		
     	<% if flash[:notice] %>
@@ -69,10 +69,11 @@
          	<p id="alert"><%= flash[:alert] %></p>
         <% end %>
 
-  		<%= yield %>
-		
-    </div>
-	
+      
+  		 	<%= yield %>
+        
+     </div>
+      
 	<footer>
 		<div id="footer_content">
 			<p>Made by: Ryan, Paul, Jen and Kyle - 2014</p>
