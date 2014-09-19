@@ -98,7 +98,7 @@ class TasksController < ApplicationController
     
     @task.delete
     
-    redirect_to tasks_path, :notice => "Your task has been deleted."
+    redirect_to dashboard_path, :notice => "Your task has been deleted."
   end
   
   def show
