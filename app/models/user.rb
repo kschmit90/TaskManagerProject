@@ -19,7 +19,9 @@ class User < ActiveRecord::Base
       :via => :smtp,
       :via_options => {
         :address => 'smtp.gmail.com',
+        :enable_starttls_auto => true,
         :port => '587',
+        :domain => 'http://rpjk-taskmanager.herokuapp.com/'
         :authentication => :plain,
         :user_name => ENV['EMAIL'],
         :password => ENV['PASSWORD']
