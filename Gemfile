@@ -51,4 +51,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 ruby '2.1.2'
