@@ -4,7 +4,12 @@ class ApplicationController < ActionController::Base
 
   def current_user
     if session[:user_id]
-      User.find(session[:user_id])
+      if @user = User.find_by_id(session[:user_id])
+        @user
+      else 
+        reset_session
+        redirect_to root_path
+      end  
     end
   end
 
@@ -17,9 +22,11 @@ class ApplicationController < ActionController::Base
   def track_activity(trackable, action = params[:action])
     current_user.activities.create! action: action, trackable: trackable
   end
-  #
+
   # def delete_tracked_projects
-  #   Activity.where
+  #   Activity.where(trackable_type: "Project", trackable_id: @project_id).each do |a|
+  #     a.delete
+  #   end
   # end
   #
   # def delete_tracked_tasks
@@ -28,11 +35,11 @@ class ApplicationController < ActionController::Base
   #   end
   # end
   #
-  def delete_tracked_users
-    Activity.where(:user_id => @user.id).each do |a|
-      a.delete
-    end
-  end
+  # def delete_tracked_users
+  #   Activity.where(:user_id => @user.id).each do |a|
+  #     a.delete
+  #   end
+  # end
 
   def delete_slug(model)
     model.find_by_slug(params[:id]).delete
