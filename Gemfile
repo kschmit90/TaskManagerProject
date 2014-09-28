@@ -15,7 +15,7 @@ gem 'pg'
 
 group :assets do
 
-#   gem 'sass-rails',   '~> 3.2.3'
+gem 'sass-rails',   '~> 3.2.3'
 #   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -50,5 +50,7 @@ gem 'pry-rails', :group => :development
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
+
+gem 'dotenv-rails', :groups => [:development, :test, :production]
 
 ruby '2.1.2'

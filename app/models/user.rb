@@ -21,8 +21,8 @@ class User < ActiveRecord::Base
         :address => 'smtp.gmail.com',
         :port => '587',
         :authentication => :plain,
-        :user_name => 'rpjktest.email@gmail.com',
-        :password => 'Testpassword'
+        :user_name => ENV['GMAIL_SMTP_USER'],
+        :password => ENV['GMAIL_SMTP_PASSWORD']
       }
     })
   

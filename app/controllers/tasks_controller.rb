@@ -22,10 +22,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(params[:task])
-
+    @user = User.first
+    
     if @task.save
       track_activity @task
-
+      @user.send_task_email(@task)
       redirect_to dashboard_path(@task.id), :notice => @@task_new
     else
       flash[:alert] = @@task_alert
